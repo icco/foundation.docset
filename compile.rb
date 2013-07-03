@@ -29,6 +29,10 @@ class FoundationAssets
     end
 end
 
-Stasis.new(File.expand_path('.'), File.expand_path('./public'), {:asset_path => "/assets"}).render
+Stasis.new(File.expand_path('.'), File.expand_path(File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/')), {:asset_path => "assets"}).render
 assets = FoundationAssets.new
 assets.compile
+
+FileUtils.rm_r File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/assets'), :force => true
+FileUtils.mv File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/public/assets'), File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/assets')
+FileUtils.rm_r File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/public'), :force => true
