@@ -11,14 +11,14 @@ class FoundationAssets
 
     def initialize
       @env = Sprockets::Environment.new
-      @env.append_path File.expand_path('../../scss', __FILE__)
-      @env.append_path File.expand_path('../css', __FILE__)
-      @env.append_path File.expand_path('../../js', __FILE__)
-      @env.append_path File.expand_path('../js', __FILE__)
+      @env.append_path File.expand_path('../../scss', FileUtils.pwd)
+      @env.append_path File.expand_path('../css', FileUtils.pwd)
+      @env.append_path File.expand_path('../../js', FileUtils.pwd)
+      @env.append_path File.expand_path('../js', FileUtils.pwd)
     end
 
     def compile
-      assets_path = "public/assets"
+      assets_path = File.expand_path(File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/assets'))
       FileUtils.mkdir_p("#{assets_path}/vendor")
       BUNDLES.each do |bundle|
         pth = "#{assets_path}/#{bundle}"
@@ -33,6 +33,4 @@ Stasis.new(File.expand_path('.'), File.expand_path(File.join(File.dirname(__FILE
 assets = FoundationAssets.new
 assets.compile
 
-FileUtils.rm_r File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/assets'), :force => true
-FileUtils.mv File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/public/assets'), File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/assets')
 FileUtils.rm_r File.join(File.dirname(__FILE__), 'Contents/Resources/Documents/public'), :force => true
