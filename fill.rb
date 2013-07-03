@@ -13,9 +13,9 @@ puts "DROP TABLE searchIndex;"
 puts "CREATE TABLE IF NOT EXISTS searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);"
 puts 'CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);'
 
-Dir.glob("Contents/Resources/Documents/components/*html").each do |file|
-  doc = Nokogiri::HTML(File.read(file))
-  file_name = File.join("components", File.basename(file))
-  header = get_header doc
-  puts "INSERT INTO searchIndex VALUES (NULL, '#{header}', 'Guide', '#{file_name}');"
+file = "Contents/Resources/Documents/index.html"
+doc = Nokogiri::HTML(File.read(file))
+guides = doc.css('h5 > a').to_a.delete_if { |x| x.content.capitalize != x.content }
+guides.each do |guide|
+  puts "INSERT INTO searchIndex VALUES (NULL, '#{guide.content}', 'Guide', '#{guide.attributes["href"].value}');"
 end
