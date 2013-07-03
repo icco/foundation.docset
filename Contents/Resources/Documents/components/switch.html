@@ -1,0 +1,583 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicons/apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicons/apple-touch-icon-114x114-precomposed.png">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicons/apple-touch-icon-72x72-precomposed.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <title>Foundation Docs: Switch</title>
+    <link rel="stylesheet" href="http://hiromi:4001/assets/normalize.css" />
+    <link rel="stylesheet" href="http://hiromi:4001/assets/docs.css" />
+    <script src="http://hiromi:4001/assets/vendor/custom.modernizr.js"></script>
+  </head>
+  <body class="antialiased">
+
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">Foundation</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="/grid.php">Features</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates.php">Add-ons</a></li>
+          <li class="divider"></li>
+          <li><a href="/case-jacquelinewest.php">Case Studies</a></li>
+          <li class="divider"></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li class="divider"></li>
+          <li><a href="/training.php">Training</a></li>
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="http://foundation.zurb.com/docs" class="button">Getting Started</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 class="docs header"><a href="http://foundation.zurb.com/docs/">Foundation 4 Documentation</a></h1>
+        <h6 class="docs subheader"><a href="http://foundation.zurb.com/old-docs/f3">Want F3 Docs?</a></h6>
+        <hr>
+      </div>
+    </div>
+
+    
+<div class="row">
+  <div class="large-9 push-3 columns">
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Switch</h2>
+        <h4 class="subheader">Switches can be used instead of regular radio buttons to switch between two options. They are customizable and use styles that won't show on phones that don't support media queries. On these devices, they will appear as regular radio buttons.</h4>
+
+        <div class="small-2 switch tiny">
+          <input id="a" name="switch-a" type="radio" checked>
+          <label for="a" onclick="">Off</label>
+
+          <input id="a1" name="switch-a" type="radio">
+          <label for="a1" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <div class="small-3 switch small">
+          <input id="b" name="switch-b" type="radio" checked>
+          <label for="b" onclick="">Off</label>
+
+          <input id="b1" name="switch-b" type="radio">
+          <label for="b1" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <div class="small-4 switch radius">
+          <input id="c" name="switch-c" type="radio" checked>
+          <label for="c" onclick="">Off</label>
+
+          <input id="c1" name="switch-c" type="radio">
+          <label for="c1" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <div class="small-6 switch large round">
+          <input id="d" name="switch-d" type="radio" checked>
+          <label for="d" onclick="">Off</label>
+
+          <input id="d1" name="switch-d" type="radio">
+          <label for="d1" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <hr>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+
+        <h3>Build With Predefined HTML Classes</h3>
+        <p>There are two ways to build switches in Foundation 4: with our predefined HTML classes or with our mixins. Building switches using our predefined classes is simple, you'll just need a <code>div.switch</code> wrapped around a specific input/label markup. From there, you can update the styles as you need to. The switches width is 100% of the container you put it in or you can use our grid classes, <code>.small-#</code> or <code>.large-#</code>, directly on the switch.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">&lt;!-- Default switch --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch-x</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">radio</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">checked</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="inline"><span class="inline-delimiter">&quot;</span><span class="inline-delimiter">&quot;</span></span><span class="tag">&gt;</span>Off<span class="tag">&lt;/label&gt;</span>
+
+  <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">x1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch-x</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">radio</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">x1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="inline"><span class="inline-delimiter">&quot;</span><span class="inline-delimiter">&quot;</span></span><span class="tag">&gt;</span>On<span class="tag">&lt;/label&gt;</span>
+
+  <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- Using class options --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch large round</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch-z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">radio</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">checked</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="inline"><span class="inline-delimiter">&quot;</span><span class="inline-delimiter">&quot;</span></span><span class="tag">&gt;</span>Off<span class="tag">&lt;/label&gt;</span>
+
+  <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch-z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">radio</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="inline"><span class="inline-delimiter">&quot;</span><span class="inline-delimiter">&quot;</span></span><span class="tag">&gt;</span>On<span class="tag">&lt;/label&gt;</span>
+
+  <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre></div>
+</div>
+</div>
+
+        <p>The class options:</p>
+        <ul class="disc">
+          <li><code>radius</code>: Add this to the the switch container to get a 3px radius paddle and edges</li>
+          <li><code>round</code>: Add this to the the switch container to get a round paddle and edges</li>
+          <li><code>tiny</code>: Set the height and text of the switch to tiny</li>
+          <li><code>small</code>: Set the height and text of the switch to small</li>
+          <li><code>large</code>: Set the height and text of the switch to large</li>
+        </ul>
+
+        <p>To use these styles, make sure you have the default Foundation CSS package or that you've selected switches from a custom package. These should be linked up following our default <a href="../index.html">HTML page structure</a>.</p>
+
+        <hr>
+
+        <h3>Build with our Mixins</h3>
+        <p>We've included SCSS mixins used to style switches. To use the mixin, you'll need to have the <a href="../sass.html">extension installed</a> or grab <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/_variables.scss">_variables.scss</a>, <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_global.scss">_global.scss</a> and <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_switch.scss">_switch.scss</a> from Github and throw them into a Foundation folder in your project directory. From there, you can import the files at the top of your own SCSS stylesheet, like so:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/variables</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/global</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/switch</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+        <p>The markup is pretty simple, you'll only need a single class or ID on the container to apply the mixin.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">your-class-name</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch-z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">radio</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">checked</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="inline"><span class="inline-delimiter">&quot;</span><span class="inline-delimiter">&quot;</span></span><span class="tag">&gt;</span>Off<span class="tag">&lt;/label&gt;</span>
+
+  <span class="tag">&lt;input</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">switch-z</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">radio</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">z1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">onclick</span>=<span class="inline"><span class="inline-delimiter">&quot;</span><span class="inline-delimiter">&quot;</span></span><span class="tag">&gt;</span>On<span class="tag">&lt;/label&gt;</span>
+
+  <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <h5>Quick Mixin</h5>
+        <p>You can build your labels using our global mixin by including it on your custom class or ID in your own stylesheet. The mixin contains options for changing the key styles, the rest of the defaults can be modified using the available variables. The global mixin looks like this:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Using the default styles */</span>
+<span class="class">.your-class-name</span> { <span class="directive">@include</span> <span class="key">switch</span>; }</pre></div>
+</div>
+</div>
+
+        <div class="switch">
+          <input id="y" name="switch-y" type="radio" checked>
+          <label for="y" onclick="">Off</label>
+
+          <input id="y1" name="switch-y" type="radio">
+          <label for="y1" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <p>There are <strong>ten options</strong> you can customize on the fly when writing this mixin. These controls things like: padding, text size, color and radius. Setting any of these options to false will negate those styles.</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Using the available options */</span>
+<span class="class">.your-class-name</span> {
+  <span class="directive">@include</span> <span class="error">s</span><span class="error">w</span><span class="error">i</span><span class="error">t</span><span class="error">c</span><span class="error">h</span>(<span class="error">$</span><span class="key">transition-speed</span>, <span class="error">$</span><span class="key">transition-ease</span>, <span class="error">$</span><span class="key">height</span>, <span class="error">$</span><span class="key">font-size</span>, <span class="error">$</span><span class="key">line-height</span>, <span class="error">$</span><span class="key">paddle-bg</span>, <span class="error">$</span><span class="key">positive-color</span>, <span class="error">$</span><span class="key">negative-color</span>, <span class="error">$</span><span class="key">radius</span>, <span class="error">$</span><span class="key">base-style</span>);
+}
+
+<span class="comment">/* This sets the speed at which the switch toggles */</span>
+<span class="error">$</span><span class="type">transition-speed</span>: <span class="error">$</span><span class="type">switch-paddle-transition-speed</span>
+
+<span class="comment">/* This sets the ease of the switch transition */</span>
+<span class="error">$</span><span class="type">transition-ease</span>: <span class="error">$</span><span class="type">switch-paddle-transition-ease</span>
+
+<span class="comment">/* This controls the overall height of the switch */</span>
+<span class="error">$</span><span class="type">height</span>: <span class="error">$</span><span class="type">switch-height-med</span>
+
+<span class="comment">/* You can set a different font-size for you switch */</span>
+<span class="error">$</span><span class="type">font-size</span>: <span class="error">$</span><span class="type">switch-font-size-med</span>
+
+<span class="comment">/* You can set a different line-height too */</span>
+<span class="error">$</span><span class="type">line-height</span>: <span class="float">2.3em</span>
+
+<span class="comment">/* This controls the background of the paddle */</span>
+<span class="error">$</span><span class="type">paddle-bg</span>: <span class="error">$</span><span class="type">switch-paddle-bg</span>
+
+<span class="comment">/* Set the box-shadow color for the right side of the switch */</span>
+<span class="error">$</span><span class="type">positive-color</span>: <span class="error">$</span><span class="type">switch-positive-color</span>
+
+<span class="comment">/* Set the box-shadow color for the left side of the switch */</span>
+<span class="error">$</span><span class="type">negative-color</span>: <span class="error">$</span><span class="type">switch-negative-color</span>
+
+<span class="comment">/* Set this to true for default radius or any number for complete control */</span>
+<span class="error">$</span><span class="type">radius</span>: <span class="type">false</span>
+
+<span class="comment">/* If you set this to false, base styles are left out */</span>
+<span class="error">$</span><span class="type">base-style</span>: <span class="type">true</span>
+</pre></div>
+</div>
+</div>
+
+        <div class="switch-custom">
+          <input id="w" name="switch-w" type="radio" checked>
+          <label for="w" onclick="">Off</label>
+
+          <input id="w1" name="switch-w" type="radio">
+          <label for="w1" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <h5>Base Mixin</h5>
+        <p>You also have access to a few internal mixins that can create parts of the button as needed. The base mixin will create a switch base that only include structural styles.</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.your-class-name</span> { <span class="directive">@include</span> <span class="error">s</span><span class="error">w</span><span class="error">i</span><span class="error">t</span><span class="error">c</span><span class="error">h</span><span class="error">-</span><span class="error">b</span><span class="error">a</span><span class="error">s</span><span class="error">e</span>(<span class="error">$</span><span class="key">transition-speed</span>, <span class="error">$</span><span class="key">transition-ease</span>); }
+</pre></div>
+</div>
+</div>
+
+        <div class="switch-custom-base">
+          <input id="o" name="switch-o" type="radio" checked>
+          <label for="o" onclick="">Off</label>
+
+          <input id="o1" name="switch-o" type="radio">
+          <label for="o1" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <h5>Size Mixin</h5>
+        <p>The size mixin will let you control the size of the switch, font-size and line-height.</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.your-class-name</span> {
+  <span class="directive">@include</span> <span class="error">s</span><span class="error">w</span><span class="error">i</span><span class="error">t</span><span class="error">c</span><span class="error">h</span><span class="error">-</span><span class="error">b</span><span class="error">a</span><span class="error">s</span><span class="error">e</span>(<span class="error">$</span><span class="key">transition-speed</span>, <span class="error">$</span><span class="key">transition-ease</span>);
+  <span class="directive">@include</span> <span class="error">s</span><span class="error">w</span><span class="error">i</span><span class="error">t</span><span class="error">c</span><span class="error">h</span><span class="error">-</span><span class="error">s</span><span class="error">i</span><span class="error">z</span><span class="error">e</span>(<span class="error">$</span><span class="key">height</span>, <span class="error">$</span><span class="key">font-size</span>, <span class="error">$</span><span class="key">line-height</span>);
+}
+</pre></div>
+</div>
+</div>
+
+        <div class="switch-custom-base size">
+          <input id="o2" name="switch-o2" type="radio" checked>
+          <label for="o2" onclick="">Off</label>
+
+          <input id="o3" name="switch-o2" type="radio">
+          <label for="o3" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <h5>Style Mixin</h5>
+        <p>The last internal mixin you have access to for buttons is the style mixin. This will help you style background color, text color, positive/negative color, etc.</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.your-class-name</span> {
+  <span class="directive">@include</span> <span class="error">s</span><span class="error">w</span><span class="error">i</span><span class="error">t</span><span class="error">c</span><span class="error">h</span><span class="error">-</span><span class="error">b</span><span class="error">a</span><span class="error">s</span><span class="error">e</span>(<span class="error">$</span><span class="key">transition-speed</span>, <span class="error">$</span><span class="key">transition-ease</span>);
+  <span class="directive">@include</span> <span class="error">s</span><span class="error">w</span><span class="error">i</span><span class="error">t</span><span class="error">c</span><span class="error">h</span><span class="error">-</span><span class="error">s</span><span class="error">i</span><span class="error">z</span><span class="error">e</span>(<span class="error">$</span><span class="key">height</span>, <span class="error">$</span><span class="key">font-size</span>, <span class="error">$</span><span class="key">line-height</span>);
+  <span class="directive">@include</span> <span class="error">s</span><span class="error">w</span><span class="error">i</span><span class="error">t</span><span class="error">c</span><span class="error">h</span><span class="error">-</span><span class="error">s</span><span class="error">t</span><span class="error">y</span><span class="error">l</span><span class="error">e</span>(<span class="error">$</span><span class="key">paddle-bg</span>, <span class="error">$</span><span class="key">positive-color</span>, <span class="error">$</span><span class="key">negative-color</span>, <span class="error">$</span><span class="key">radius</span>, <span class="error">$</span><span class="key">base-style</span>);
+}
+</pre></div>
+</div>
+</div>
+
+        <div class="switch-custom-base size style">
+          <input id="o4" name="switch-o3" type="radio" checked>
+          <label for="o4" onclick="">Off</label>
+
+          <input id="o5" name="switch-o3" type="radio">
+          <label for="o5" onclick="">On</label>
+
+          <span></span>
+        </div>
+
+        <h5>Default SCSS Variables</h5>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Controlling border styles and background colors for the switch container */</span>
+<span class="error">$</span><span class="type">switch-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">switch-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">switch-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">switch-bg</span>: <span class="constant">#fff</span>;
+
+<span class="comment">/* We use these to control the switch heights for our default classes */</span>
+<span class="error">$</span><span class="type">switch-height-tny</span>: <span class="float">22px</span>;
+<span class="error">$</span><span class="type">switch-height-sml</span>: <span class="float">28px</span>;
+<span class="error">$</span><span class="type">switch-height-med</span>: <span class="float">36px</span>;
+<span class="error">$</span><span class="type">switch-height-lrg</span>: <span class="float">44px</span>;
+<span class="error">$</span><span class="type">switch-bottom-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* We use these to control default font sizes for our classes. */</span>
+<span class="error">$</span><span class="type">switch-font-size-tny</span>: <span class="float">11px</span>;
+<span class="error">$</span><span class="type">switch-font-size-sml</span>: <span class="float">12px</span>;
+<span class="error">$</span><span class="type">switch-font-size-med</span>: <span class="float">14px</span>;
+<span class="error">$</span><span class="type">switch-font-size-lrg</span>: <span class="float">17px</span>;
+<span class="error">$</span><span class="type">switch-label-side-padding</span>: <span class="float">6px</span>;
+
+<span class="comment">/* We use these to style the switch-paddle */</span>
+<span class="error">$</span><span class="type">switch-paddle-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">switch-paddle-fade-to-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">switch-paddle-bg</span>, <span class="float">10%</span>);
+<span class="error">$</span><span class="type">switch-paddle-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">switch-paddle-bg</span>, <span class="float">35%</span>);
+<span class="error">$</span><span class="type">switch-paddle-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">switch-paddle-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">switch-paddle-transition-speed</span>: <span class="class">.1s</span>;
+<span class="error">$</span><span class="type">switch-paddle-transition-ease</span>: <span class="type">ease-out</span>;
+<span class="error">$</span><span class="type">switch-positive-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">success-color</span>, <span class="float">50%</span>);
+<span class="error">$</span><span class="type">switch-negative-color</span>: <span class="constant">#f5f5f5</span>;
+
+<span class="comment">/* Outline Style for tabbing through switches */</span>
+<span class="error">$</span><span class="type">switch-label-outline</span>: <span class="float">1px</span> <span class="type">dotted</span> <span class="constant">#888</span>;</pre></div>
+</div>
+</div>
+
+        <p><strong>Note:</strong> <code>emCalc();</code> is a function we wrote to convert <code>px</code> to <code>em</code>. It is included in <strong>_variables.scss</strong>.</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="large-3 pull-9 columns">
+    <div class="docs section-container accordion" data-section data-options="one_up: false">
+  <section class="section ">
+    <p class="title"><a href="#">Using Foundation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="../">Get Started</a></li>
+        <li><a href="../javascript.html">Javascript</a></li>
+        <li><a href="../sass.html">Sass</a></li>
+        <li><a href="../rails.html">Rails</a></li>
+        <li><a href="../media-queries.html">Media Queries</a></li>
+        <li><a class="" href="visibility.html">Visibility Classes</a></li>
+        <li><a href="../rtl.html">Right-to-Left Support</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Grid</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="grid.html">Grid</a></li>
+        <li><a class="" href="block-grid.html">Block Grid</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Navigation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="pagination.html">Pagination</a></li>
+        <li><a class="" href="side-nav.html">Side Nav</a></li>
+        <li><a class="" href="sub-nav.html">Sub Nav</a></li>
+        <li><a class="" href="top-bar.html">Top Bar</a></li>
+        <li><a class="" href="breadcrumbs.html">Breadcrumbs</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Buttons</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="buttons.html">Buttons</a></li>
+        <li><a class="" href="button-groups.html">Button Groups</a></li>
+        <li><a class="" href="dropdown-buttons.html">Dropdown Buttons</a></li>
+        <li><a class="" href="split-buttons.html">Split Buttons</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section active">
+    <p class="title"><a href="#">Forms</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="forms.html">Forms</a></li>
+        <li><a class="" href="custom-forms.html">Custom Forms</a></li>
+        <li><a class="active" href="switch.html">Switch</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Typography</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="type.html">Type</a></li>
+        <li><a class="" href="inline-lists.html">Inline Lists</a></li>
+        <li><a class="" href="labels.html">Labels</a></li>
+        <li><a class="" href="keystrokes.html">Keystrokes</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">CSS Components</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="global.html">Global Styles</a></li>
+        <li><a class="" href="alert-boxes.html">Alert Boxes</a></li>
+        <li><a class="" href="panels.html">Panels</a></li>
+        <li><a class="" href="pricing-tables.html">Pricing Tables</a></li>
+        <li><a class="" href="progress-bars.html">Progress Bars</a></li>
+        <li><a class="" href="tables.html">Tables</a></li>
+        <li><a class="" href="thumbnails.html">Thumbnails</a></li>
+        <li><a class="" href="flex-video.html">Flex Video</a></li>
+        <li class="divider"></li>
+        <li><a target="_blank" style="font-style: italic" class="" href="kitchen-sink.html">Kitchen Sink</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Javascript</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="clearing.html">Clearing</a></li>
+        <li><a class="" href="dropdown.html">Dropdown</a></li>
+        <li><a class="" href="interchange.html">Interchange</a></li>
+        <li><a class="" href="joyride.html">Joyride</a></li>
+        <li><a class="" href="magellan.html">Magellan</a></li>
+        <li><a class="" href="orbit.html">Orbit</a></li>
+        <li><a class="" href="reveal.html">Reveal</a></li>
+        <li><a class="" href="section.html">Section</a></li>
+        <li><a class="" href="tooltips.html">Tooltips</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../faq.html">FAQ</a></p>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../support.html">Support</a></p>
+  </section>
+</div>
+
+<p><a href="http://foundation.zurb.com/download.php" class="button expand" style="margin-bottom: 0;">Download Foundation 4</a></p>
+
+<div class="jobs hide-for-small">
+  <h5>Awesome product jobs:</h5>
+  <div id="zurbJobsWidget"></div>
+  <a id="via" href="http://zurbjobs.com">via&nbsp;<span class="jobs-link">ZURBjobs</span></a>
+</div>
+
+  </div>
+
+</div>
+
+    <footer class="row full-width">
+      <div class="large-5 columns">
+        <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://foundation.zurb.com/about.php">Foundation Info and Goodies &rarr;</a></p>
+      </div>
+
+      <div class="large-3 columns">
+        <h6><strong>Using Foundation?</strong></h6>
+        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+      </div>
+
+      <div class="large-4 columns">
+        <h6><strong>Need some help?</strong></h6>
+        <p>For answers or help visit the <a href="http://foundation.zurb.com/docs/support.html">Support page</a>.</p>
+      </div>
+    </footer>
+
+    <div id="copyright">
+      <div class="row full-width">
+        <div class="large-4 columns">
+          <p>Site content &copy; 2013 ZURB, inc.</p>
+        </div>
+        <div class="large-8 columns">
+          <ul class="inline-list right">
+            <li><a href="http://foundation.zurb.com">Home</a></li>
+            <li><a href="http://foundation.zurb.com/download.php">Download</a></li>
+            <li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+            <li><a href="http://foundation.zurb.com/docs/changelog.html">Changelog</a></li>
+            <li><a href="http://foundation.zurb.com/about.php">About</a></li>
+            <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Google Analytics
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      document.write('<script src="http://hiromi:4001/assets/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js"><\/script>');
+    </script>
+    <script src="http://hiromi:4001/assets/docs.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+      
+
+      $.ajax({
+        url: '//zurb.com/jobs/widgets/jobs.json?limit=3',
+        dataType: 'jsonp',
+        success: function(data) {
+          var list = $("<ul></ul>");
+          $.each(data.jobs, function(idx, job) {
+            var item = "<li><a href='"+job.url+"' target='_blank'>" +
+              "<span class='positionTitle'>"+job.title+"</span>" +
+              "<span class='location'><span class='companyName'>"+job.company_name+"</span> in "+job.location+"</span>" +
+              "</a>" +
+              "</li>";
+            list.append(item);
+          });
+            // Customize This
+          $("#zurbJobsWidget").html(list);
+        }
+      });
+
+      // For Kitchen Sink Page
+      $('#start-jr').on('click', function() {
+        $(document).foundation('joyride','start');
+      });
+    </script>
+  </body>
+</html>

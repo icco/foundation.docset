@@ -1,0 +1,594 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicons/apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicons/apple-touch-icon-114x114-precomposed.png">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicons/apple-touch-icon-72x72-precomposed.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <title>Foundation Docs: Global</title>
+    <link rel="stylesheet" href="http://hiromi:4001/assets/normalize.css" />
+    <link rel="stylesheet" href="http://hiromi:4001/assets/docs.css" />
+    <script src="http://hiromi:4001/assets/vendor/custom.modernizr.js"></script>
+  </head>
+  <body class="antialiased">
+
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">Foundation</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="/grid.php">Features</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates.php">Add-ons</a></li>
+          <li class="divider"></li>
+          <li><a href="/case-jacquelinewest.php">Case Studies</a></li>
+          <li class="divider"></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li class="divider"></li>
+          <li><a href="/training.php">Training</a></li>
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="http://foundation.zurb.com/docs" class="button">Getting Started</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 class="docs header"><a href="http://foundation.zurb.com/docs/">Foundation 4 Documentation</a></h1>
+        <h6 class="docs subheader"><a href="http://foundation.zurb.com/old-docs/f3">Want F3 Docs?</a></h6>
+        <hr>
+      </div>
+    </div>
+
+    
+<div class="row">
+  <div class="large-9 push-3 columns">
+    <div class="row">
+      <div class="large-12 columns">
+        
+        <h2>Global</h2>
+        <h4 class="subheader">Every Foundation project needs to include these global styles in order to work properly. These include things like basic formatting and global utility classes.</h4>
+
+        <hr>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Global Foundation Mixins */</span>
+
+<span class="comment">/* We use this to control border radius. */</span>
+<span class="directive">@mixin</span> <span class="error">r</span><span class="error">a</span><span class="error">d</span><span class="error">i</span><span class="error">u</span><span class="error">s</span>(<span class="error">$</span><span class="type">radius</span>:<span class="error">$</span><span class="type">global-radius</span>) {
+  <span class="directive">@if</span> <span class="error">$</span><span class="key">radius</span> {
+    <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+      <span class="key">-webkit-border-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    }
+    <span class="key">border-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+  }
+}
+
+<span class="comment">/* We use this to create equal side border radius on elements. */</span>
+<span class="directive">@mixin</span> <span class="error">s</span><span class="error">i</span><span class="error">d</span><span class="error">e</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">d</span><span class="error">i</span><span class="error">u</span><span class="error">s</span>(<span class="error">$</span><span class="type">side</span>, <span class="error">$</span><span class="type">radius</span>) {
+  <span class="directive">@if</span> <span class="error">$</span><span class="key">side</span> == <span class="key">left</span> {
+    <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+      <span class="key">-moz-border-radius-bottomleft</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-moz-border-radius-topleft</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-bottom-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-top-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    }
+    <span class="key">border-bottom-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    <span class="key">border-top-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+  }
+  <span class="directive">@else</span> <span class="key">if</span> <span class="error">$</span><span class="key">side</span> == <span class="key">right</span> {
+    <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+      <span class="key">-moz-border-radius-topright</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-moz-border-radius-bottomright</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-top-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-bottom-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    }
+    <span class="key">border-top-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    <span class="key">border-bottom-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+  }
+  <span class="directive">@else</span> <span class="key">if</span> <span class="error">$</span><span class="key">side</span> == <span class="key">top</span> {
+    <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+      <span class="key">-moz-border-radius-topright</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-moz-border-radius-topleft</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-top-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-top-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    }
+    <span class="key">border-top-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    <span class="key">border-top-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+  }
+  <span class="directive">@else</span> <span class="key">if</span> <span class="error">$</span><span class="key">side</span> == <span class="key">bottom</span> {
+    <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+      <span class="key">-moz-border-radius-bottomright</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-moz-border-radius-bottomleft</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-bottom-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+      <span class="key">-webkit-border-bottom-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    }
+    <span class="key">border-bottom-right-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+    <span class="key">border-bottom-left-radius</span>: <span class="error">$</span><span class="value">radius</span>;
+  }
+}
+
+<span class="comment">/* We can control whether or not we have inset shadows edges. */</span>
+<span class="directive">@mixin</span> <span class="error">i</span><span class="error">n</span><span class="error">s</span><span class="error">e</span><span class="error">t</span><span class="error">-</span><span class="error">s</span><span class="error">h</span><span class="error">a</span><span class="error">d</span><span class="error">o</span><span class="error">w</span>(<span class="error">$</span><span class="type">active</span><span class="pseudo-class">:true</span>) {
+  <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+    <span class="key">-webkit-box-shadow</span>: <span class="error">$</span><span class="value">shiny-edge-size</span> <span class="error">$</span><span class="value">shiny-edge-color</span> <span class="value">inset</span>;
+  }
+  <span class="key">box-shadow</span>: <span class="error">$</span><span class="value">shiny-edge-size</span> <span class="error">$</span><span class="value">shiny-edge-color</span> <span class="value">inset</span>;
+
+  <span class="directive">@if</span> <span class="error">$</span><span class="key">active</span> { <span class="error">&amp;</span>:<span class="value">active</span> {
+    <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+      <span class="key">-webkit-box-shadow</span>: <span class="error">$</span><span class="value">shiny-edge-size</span> <span class="error">$</span><span class="value">shiny-edge-active-color</span> <span class="value">inset</span>;
+    }
+    <span class="key">box-shadow</span>: <span class="error">$</span><span class="value">shiny-edge-size</span> <span class="error">$</span><span class="value">shiny-edge-active-color</span> <span class="value">inset</span>; } }
+}
+
+<span class="comment">/* We use this to add transitions to elements */</span>
+<span class="directive">@mixin</span> <span class="error">s</span><span class="error">i</span><span class="error">n</span><span class="error">g</span><span class="error">l</span><span class="error">e</span><span class="error">-</span><span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">i</span><span class="error">t</span><span class="error">i</span><span class="error">o</span><span class="error">n</span>(<span class="error">$</span><span class="type">property</span><span class="pseudo-class">:all</span>, <span class="error">$</span><span class="type">speed</span><span class="pseudo-class">:300ms</span>, <span class="error">$</span><span class="type">ease</span><span class="pseudo-class">:ease-out</span>) {
+  <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+    <span class="key">-webkit-transition</span>: <span class="error">$</span><span class="value">property</span> <span class="error">$</span><span class="value">speed</span> <span class="error">$</span><span class="value">ease</span>;
+    <span class="key">-moz-transition</span>: <span class="error">$</span><span class="value">property</span> <span class="error">$</span><span class="value">speed</span> <span class="error">$</span><span class="value">ease</span>;
+  }
+  <span class="key">transition</span>: <span class="error">$</span><span class="value">property</span> <span class="error">$</span><span class="value">speed</span> <span class="error">$</span><span class="value">ease</span>;
+}
+
+<span class="comment">/* We use this to add box-sizing across browser prefixes */</span>
+<span class="directive">@mixin</span> <span class="error">b</span><span class="error">o</span><span class="error">x</span><span class="error">-</span><span class="error">s</span><span class="error">i</span><span class="error">z</span><span class="error">i</span><span class="error">n</span><span class="error">g</span>(<span class="error">$</span><span class="type">type</span><span class="pseudo-class">:border-box</span>) {
+  <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+    <span class="key">-moz-box-sizing</span>: <span class="error">$</span><span class="value">type</span>;
+    <span class="key">-webkit-box-sizing</span>: <span class="error">$</span><span class="value">type</span>;
+  }
+  <span class="key">box-sizing</span>: <span class="error">$</span><span class="value">type</span>;
+}
+
+<span class="comment">/* We use this to create equilateral triangles */</span>
+<span class="directive">@mixin</span> <span class="error">c</span><span class="error">s</span><span class="error">s</span><span class="error">-</span><span class="error">t</span><span class="error">r</span><span class="error">i</span><span class="error">a</span><span class="error">n</span><span class="error">g</span><span class="error">l</span><span class="error">e</span>(<span class="error">$</span><span class="type">triangle-size</span>, <span class="error">$</span><span class="type">triangle-color</span>, <span class="error">$</span><span class="type">triangle-direction</span>) {
+  <span class="key">content</span>: <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+  <span class="key">display</span>: <span class="value">block</span>;
+  <span class="key">width</span>: <span class="float">0</span>;
+  <span class="key">height</span>: <span class="float">0</span>;
+  <span class="key">border</span>: <span class="value">inset</span> <span class="error">$</span><span class="value">triangle-size</span>;
+  <span class="directive">@if</span> (<span class="error">$</span><span class="key">triangle-direction</span> == <span class="key">top</span>) {
+    <span class="key">border-color</span>: <span class="error">$</span><span class="value">triangle-color</span> <span class="value">transparent</span> <span class="value">transparent</span> <span class="value">transparent</span>;
+    <span class="key">border-top-style</span>: <span class="value">solid</span>;
+  }
+  <span class="directive">@if</span> (<span class="error">$</span><span class="key">triangle-direction</span> == <span class="key">bottom</span>) {
+    <span class="key">border-color</span>: <span class="value">transparent</span> <span class="value">transparent</span> <span class="error">$</span><span class="value">triangle-color</span> <span class="value">transparent</span>;
+    <span class="key">border-bottom-style</span>: <span class="value">solid</span>;
+  }
+  <span class="directive">@if</span> (<span class="error">$</span><span class="key">triangle-direction</span> == <span class="key">left</span>) {
+    <span class="key">border-color</span>: <span class="value">transparent</span> <span class="value">transparent</span> <span class="value">transparent</span> <span class="error">$</span><span class="value">triangle-color</span>;
+    <span class="key">border-left-style</span>: <span class="value">solid</span>;
+  }
+  <span class="directive">@if</span> (<span class="error">$</span><span class="key">triangle-direction</span> == <span class="key">right</span>) {
+    <span class="key">border-color</span>: <span class="value">transparent</span> <span class="error">$</span><span class="value">triangle-color</span> <span class="value">transparent</span> <span class="value">transparent</span>;
+    <span class="key">border-right-style</span>: <span class="value">solid</span>;
+  }
+}
+
+<span class="comment">/* We use this to do clear floats */</span>
+<span class="directive">@mixin</span> <span class="error">c</span><span class="error">l</span><span class="error">e</span><span class="error">a</span><span class="error">r</span><span class="error">f</span><span class="error">i</span><span class="error">x</span>() {
+  <span class="error">*</span><span class="key">zoom</span>:<span class="float">1</span>;
+  <span class="error">&amp;</span>:<span class="value">before</span>, <span class="error">&amp;</span>:<span class="value">after</span> { <span class="key">content</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>; <span class="key">display</span>: <span class="value">table</span>; }
+  <span class="error">&amp;</span>:<span class="value">after</span> { <span class="key">clear</span>: <span class="value">both</span>; }
+}
+
+
+<span class="comment">/* We use this to add a glowing effect to block elements */</span>
+<span class="directive">@mixin</span> <span class="error">b</span><span class="error">l</span><span class="error">o</span><span class="error">c</span><span class="error">k</span><span class="error">-</span><span class="error">g</span><span class="error">l</span><span class="error">o</span><span class="error">w</span><span class="error">i</span><span class="error">n</span><span class="error">g</span><span class="error">-</span><span class="error">e</span><span class="error">f</span><span class="error">f</span><span class="error">e</span><span class="error">c</span><span class="error">t</span>(<span class="error">$</span><span class="type">selector</span><span class="pseudo-class">:focus</span>, <span class="error">$</span><span class="type">fade-time</span><span class="pseudo-class">:300ms</span>, <span class="error">$</span><span class="type">glowing-effect-color</span><span class="pseudo-class">:fade-out</span>(<span class="error">$</span><span class="type">primary-color</span>, <span class="class">.25</span>)) {
+  <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+    <span class="key">-webkit-transition</span>: <span class="value">-webkit-box-shadow</span> <span class="error">$</span><span class="value">fade-time</span>, <span class="value">border-color</span> <span class="error">$</span><span class="value">fade-time</span> <span class="value">ease-in-out</span>;
+    <span class="key">-moz-transition</span>: <span class="value">-moz-box-shadow</span> <span class="error">$</span><span class="value">fade-time</span>, <span class="value">border-color</span> <span class="error">$</span><span class="value">fade-time</span> <span class="value">ease-in-out</span>;
+  }
+  <span class="key">transition</span>: <span class="value">box-shadow</span> <span class="error">$</span><span class="value">fade-time</span>, <span class="value">border-color</span> <span class="error">$</span><span class="value">fade-time</span> <span class="value">ease-in-out</span>;
+
+  <span class="error">&amp;</span>:<span class="error">#</span>{<span class="error">$</span><span class="key">selector</span>} {
+    <span class="directive">@if</span> <span class="error">$</span><span class="key">experimental</span> {
+      <span class="key">-webkit-box-shadow</span>: <span class="float">0</span> <span class="float">0</span> <span class="float">5px</span> <span class="error">$</span><span class="value">glowing-effect-color</span>;
+      <span class="key">-moz-box-shadow</span>: <span class="float">0</span> <span class="float">0</span> <span class="float">5px</span> <span class="error">$</span><span class="value">glowing-effect-color</span>;
+    }
+    <span class="key">box-shadow</span>: <span class="float">0</span> <span class="float">0</span> <span class="float">5px</span> <span class="error">$</span><span class="value">glowing-effect-color</span>;
+    <span class="key">border-color</span>: <span class="error">$</span><span class="value">glowing-effect-color</span>;
+  }
+}
+
+
+<span class="comment">/* Foundation Variables */</span>
+
+<span class="comment">/* The default font-size is set to 100% of the browser style sheet (usually 16px) */</span>
+<span class="comment">/* for compatibility with brower-based text zoom or user-set defaults. */</span>
+
+<span class="comment">/* Since the typical default browser font-size is 16px, that makes the calculation for grid size. */</span>
+<span class="comment">/* If you want your base font-size to be different and not have it effect the grid breakpoints, */</span>
+<span class="comment">/* set $em-base to $base-font-size and make sure $base-font-size is a px value. */</span>
+<span class="error">$</span><span class="type">base-font-size</span>: <span class="float">100%</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* $base-line-height is 24px while $base-font-size is 16px */</span>
+<span class="error">$</span><span class="type">base-line-height</span>: <span class="float">150%</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* This is the default html and body font-size for the base em value. */</span>
+<span class="error">$</span><span class="type">em-base</span>: <span class="float">16px</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px) */</span>
+<span class="directive">@function</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="error">$</span><span class="type">pxWidth</span>) {
+  <span class="directive">@return</span> <span class="error">$</span><span class="key">pxWidth</span> / <span class="error">$</span><span class="key">em-base</span> <span class="error">*</span> <span class="float">1em</span>;
+}
+
+<span class="comment">/* Maybe you want to create rems and pixels */</span>
+<span class="comment">/* @function remCalc($pxWidth) { */</span>
+<span class="comment">/*   @return $pxWidth / $em-base * 1rem; */</span>
+<span class="comment">/* } */</span>
+
+<span class="comment">/* We use these to control various global styles */</span>
+<span class="error">$</span><span class="type">body-bg</span>: <span class="constant">#fff</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">body-font-color</span>: <span class="constant">#222</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">body-font-family</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Helvetica Neue</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Helvetica</span><span class="delimiter">&quot;</span></span>, <span class="type">Helvetica</span>, <span class="type">Arial</span>, <span class="type">sans-serif</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">body-font-weight</span>: <span class="type">normal</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">body-font-style</span>: <span class="type">normal</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* We use this to control font-smoothing */</span>
+<span class="error">$</span><span class="type">font-smoothing</span>: <span class="type">subpixel-antialiased</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* We use these to control text direction settings */</span>
+<span class="error">$</span><span class="type">text-direction</span>: <span class="type">ltr</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* NOTE: No need to change this conditional statement, $text-direction variable controls it all. */</span>
+<span class="error">$</span><span class="type">default-float</span>: <span class="type">left</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">opposite-direction</span>: <span class="type">right</span> <span class="error">!</span><span class="type">default</span>;
+<span class="directive">@if</span> <span class="error">$</span><span class="type">text-direction</span> == <span class="type">ltr</span> {
+  <span class="error">$</span><span class="key">default-float</span>: <span class="value">left</span>;
+  <span class="error">$</span><span class="key">opposite-direction</span>: <span class="value">right</span>;
+} <span class="directive">@else</span> {
+  <span class="error">$</span><span class="key">default-float</span>: <span class="value">right</span>;
+  <span class="error">$</span><span class="key">opposite-direction</span>: <span class="value">left</span>;
+}
+
+<span class="comment">/* We use these as default colors throughout */</span>
+<span class="error">$</span><span class="type">primary-color</span>: <span class="constant">#2ba6cb</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">secondary-color</span>: <span class="constant">#e9e9e9</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">alert-color</span>: <span class="constant">#c60f13</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">success-color</span>: <span class="constant">#5da423</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* We use these to make sure border radius matches unless we want it different. */</span>
+<span class="error">$</span><span class="type">global-radius</span>: <span class="float">3px</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">global-rounded</span>: <span class="float">1000px</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* We use these to control inset shadow shiny edges and depressions. */</span>
+<span class="error">$</span><span class="type">shiny-edge-size</span>: <span class="float">0</span> <span class="float">1px</span> <span class="float">0</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">shiny-edge-color</span>: <span class="color">rgba(#fff, .5)</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">shiny-edge-active-color</span>: <span class="color">rgba(#000, .2)</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* We use this to control whether or not CSS classes come through in the gem files. */</span>
+<span class="error">$</span><span class="type">include-html-classes</span>: <span class="type">true</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">include-print-styles</span>: <span class="type">true</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">include-html-global-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* Media Queries */</span>
+<span class="error">$</span><span class="type">small-screen</span>: <span class="float">768px</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">medium-screen</span>: <span class="float">1280px</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">large-screen</span>: <span class="float">1440px</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="error">$</span><span class="type">screen</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen</span><span class="delimiter">&quot;</span></span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">small</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (min-width: #{$small-screen})</span><span class="delimiter">&quot;</span></span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">medium</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (min-width:#{$medium-screen})</span><span class="delimiter">&quot;</span></span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">large</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (min-width:#{$large-screen})</span><span class="delimiter">&quot;</span></span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">landscape</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (orientation: landscape)</span><span class="delimiter">&quot;</span></span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">portrait</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (orientation: portrait)</span><span class="delimiter">&quot;</span></span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* We use this as cursors values for enabling the option of having custom cursors */</span>
+<span class="error">$</span><span class="type">cursor-crosshair-value</span>: <span class="type">crosshair</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">cursor-default-value</span>: <span class="type">default</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">cursor-pointer-value</span>: <span class="type">pointer</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">cursor-help-value</span>: <span class="type">help</span> <span class="error">!</span><span class="type">default</span>;
+<span class="error">$</span><span class="type">cursor-text-value</span>: <span class="type">text</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* Set box-sizing globally to handle padding and border widths */</span>
+<span class="type">*</span>,
+<span class="type">*</span><span class="pseudo-class">:before</span>,
+<span class="type">*</span><span class="pseudo-class">:after</span> {
+  <span class="directive">@include</span> <span class="error">b</span><span class="error">o</span><span class="error">x</span><span class="error">-</span><span class="error">s</span><span class="error">i</span><span class="error">z</span><span class="error">i</span><span class="error">n</span><span class="error">g</span>(<span class="key">border-box</span>);
+}
+
+<span class="type">html</span>,
+<span class="type">body</span> { <span class="key">font-size</span>: <span class="error">$</span><span class="value">base-font-size</span>; }
+
+<span class="comment">/* Default body styles */</span>
+<span class="type">body</span> {
+  <span class="key">background</span>: <span class="error">$</span><span class="value">body-bg</span>;
+  <span class="key">color</span>: <span class="error">$</span><span class="value">body-font-color</span>;
+  <span class="key">padding</span>: <span class="float">0</span>;
+  <span class="key">margin</span>: <span class="float">0</span>;
+  <span class="key">font-family</span>: <span class="error">$</span><span class="value">body-font-family</span>;
+  <span class="key">font-weight</span>: <span class="error">$</span><span class="value">body-font-weight</span>;
+  <span class="key">font-style</span>: <span class="error">$</span><span class="value">body-font-style</span>;
+  <span class="key">line-height</span>: <span class="float">1</span>;
+  <span class="key">position</span>: <span class="value">relative</span>;
+  <span class="key">cursor</span>: <span class="error">$</span><span class="value">cursor-default-value</span>;
+}
+
+<span class="type">a</span><span class="pseudo-class">:hover</span> { <span class="key">cursor</span>: <span class="error">$</span><span class="value">cursor-pointer-value</span>; }
+
+<span class="comment">/* Override outline from normalize, we do not like it */</span>
+<span class="type">a</span><span class="pseudo-class">:focus</span> { <span class="key">outline</span>: <span class="value">none</span>; }
+
+<span class="comment">/* Grid Defaults to get images and embeds to work properly */</span>
+<span class="type">img</span>,
+<span class="type">object</span>,
+<span class="type">embed</span> { <span class="key">max-width</span>: <span class="float">100%</span>; <span class="key">height</span>: <span class="value">auto</span>; }
+
+<span class="type">object</span>,
+<span class="type">embed</span> { <span class="key">height</span>: <span class="float">100%</span>; }
+<span class="type">img</span> { <span class="key">-ms-interpolation-mode</span>: <span class="value">bicubic</span>; }
+
+<span class="constant">#map_canvas</span>,
+<span class="class">.map_canvas</span> {
+  <span class="key">img</span>,
+  <span class="key">embed</span>,
+  <span class="key">object</span> { <span class="key">max-width</span>: <span class="value">none</span> <span class="important">!important</span>;
+  }
+}
+
+<span class="comment">/* Miscellaneous useful HTML classes */</span>
+<span class="class">.left</span>         { <span class="key">float</span>: <span class="value">left</span> <span class="important">!important</span>; }
+<span class="class">.right</span>        { <span class="key">float</span>: <span class="value">right</span> <span class="important">!important</span>; }
+<span class="class">.text-left</span>    { <span class="key">text-align</span>: <span class="value">left</span> <span class="important">!important</span>; }
+<span class="class">.text-right</span>   { <span class="key">text-align</span>: <span class="value">right</span> <span class="important">!important</span>; }
+<span class="class">.text-center</span>  { <span class="key">text-align</span>: <span class="value">center</span> <span class="important">!important</span>; }
+<span class="class">.text-justify</span> { <span class="key">text-align</span>: <span class="value">justify</span> <span class="important">!important</span>; }
+<span class="class">.hide</span>         { <span class="key">display</span>: <span class="value">none</span>; }
+
+<span class="comment">/* Font smoothing */</span>
+<span class="comment">/* Antialiased font smoothing works best for light text on a dark background. */</span>
+<span class="comment">/* Apply to single elements instead of globally to body. */</span>
+<span class="comment">/* Note this only applies to webkit-based desktop browsers on the Mac. */</span>
+<span class="class">.antialiased</span> { <span class="key">-webkit-font-smoothing</span>: <span class="value">antialiased</span>; }
+
+<span class="comment">/* Get rid of gap under images by making them display: inline-block; by default */</span>
+<span class="type">img</span> { <span class="key">display</span>: <span class="value">inline-block</span>; }
+
+<span class="comment">/* Make sure textarea takes on height automatically */</span>
+<span class="type">textarea</span> { <span class="key">height</span>: <span class="value">auto</span>; <span class="key">min-height</span>: <span class="float">50px</span>; }
+
+<span class="comment">/* Make select elements 100% width by default */</span>
+<span class="type">select</span> { <span class="key">width</span>: <span class="float">100%</span>; }
+</pre></div>
+</div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="large-3 pull-9 columns">
+    <div class="docs section-container accordion" data-section data-options="one_up: false">
+  <section class="section ">
+    <p class="title"><a href="#">Using Foundation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="../">Get Started</a></li>
+        <li><a href="../javascript.html">Javascript</a></li>
+        <li><a href="../sass.html">Sass</a></li>
+        <li><a href="../rails.html">Rails</a></li>
+        <li><a href="../media-queries.html">Media Queries</a></li>
+        <li><a class="" href="visibility.html">Visibility Classes</a></li>
+        <li><a href="../rtl.html">Right-to-Left Support</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Grid</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="grid.html">Grid</a></li>
+        <li><a class="" href="block-grid.html">Block Grid</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Navigation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="pagination.html">Pagination</a></li>
+        <li><a class="" href="side-nav.html">Side Nav</a></li>
+        <li><a class="" href="sub-nav.html">Sub Nav</a></li>
+        <li><a class="" href="top-bar.html">Top Bar</a></li>
+        <li><a class="" href="breadcrumbs.html">Breadcrumbs</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Buttons</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="buttons.html">Buttons</a></li>
+        <li><a class="" href="button-groups.html">Button Groups</a></li>
+        <li><a class="" href="dropdown-buttons.html">Dropdown Buttons</a></li>
+        <li><a class="" href="split-buttons.html">Split Buttons</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Forms</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="forms.html">Forms</a></li>
+        <li><a class="" href="custom-forms.html">Custom Forms</a></li>
+        <li><a class="" href="switch.html">Switch</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Typography</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="type.html">Type</a></li>
+        <li><a class="" href="inline-lists.html">Inline Lists</a></li>
+        <li><a class="" href="labels.html">Labels</a></li>
+        <li><a class="" href="keystrokes.html">Keystrokes</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section active">
+    <p class="title"><a href="#">CSS Components</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="active" href="global.html">Global Styles</a></li>
+        <li><a class="" href="alert-boxes.html">Alert Boxes</a></li>
+        <li><a class="" href="panels.html">Panels</a></li>
+        <li><a class="" href="pricing-tables.html">Pricing Tables</a></li>
+        <li><a class="" href="progress-bars.html">Progress Bars</a></li>
+        <li><a class="" href="tables.html">Tables</a></li>
+        <li><a class="" href="thumbnails.html">Thumbnails</a></li>
+        <li><a class="" href="flex-video.html">Flex Video</a></li>
+        <li class="divider"></li>
+        <li><a target="_blank" style="font-style: italic" class="" href="kitchen-sink.html">Kitchen Sink</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Javascript</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="clearing.html">Clearing</a></li>
+        <li><a class="" href="dropdown.html">Dropdown</a></li>
+        <li><a class="" href="interchange.html">Interchange</a></li>
+        <li><a class="" href="joyride.html">Joyride</a></li>
+        <li><a class="" href="magellan.html">Magellan</a></li>
+        <li><a class="" href="orbit.html">Orbit</a></li>
+        <li><a class="" href="reveal.html">Reveal</a></li>
+        <li><a class="" href="section.html">Section</a></li>
+        <li><a class="" href="tooltips.html">Tooltips</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../faq.html">FAQ</a></p>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../support.html">Support</a></p>
+  </section>
+</div>
+
+<p><a href="http://foundation.zurb.com/download.php" class="button expand" style="margin-bottom: 0;">Download Foundation 4</a></p>
+
+<div class="jobs hide-for-small">
+  <h5>Awesome product jobs:</h5>
+  <div id="zurbJobsWidget"></div>
+  <a id="via" href="http://zurbjobs.com">via&nbsp;<span class="jobs-link">ZURBjobs</span></a>
+</div>
+
+  </div>
+
+</div>
+
+
+
+    <footer class="row full-width">
+      <div class="large-5 columns">
+        <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://foundation.zurb.com/about.php">Foundation Info and Goodies &rarr;</a></p>
+      </div>
+
+      <div class="large-3 columns">
+        <h6><strong>Using Foundation?</strong></h6>
+        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+      </div>
+
+      <div class="large-4 columns">
+        <h6><strong>Need some help?</strong></h6>
+        <p>For answers or help visit the <a href="http://foundation.zurb.com/docs/support.html">Support page</a>.</p>
+      </div>
+    </footer>
+
+    <div id="copyright">
+      <div class="row full-width">
+        <div class="large-4 columns">
+          <p>Site content &copy; 2013 ZURB, inc.</p>
+        </div>
+        <div class="large-8 columns">
+          <ul class="inline-list right">
+            <li><a href="http://foundation.zurb.com">Home</a></li>
+            <li><a href="http://foundation.zurb.com/download.php">Download</a></li>
+            <li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+            <li><a href="http://foundation.zurb.com/docs/changelog.html">Changelog</a></li>
+            <li><a href="http://foundation.zurb.com/about.php">About</a></li>
+            <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Google Analytics
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      document.write('<script src="http://hiromi:4001/assets/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js"><\/script>');
+    </script>
+    <script src="http://hiromi:4001/assets/docs.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+      
+
+      $.ajax({
+        url: '//zurb.com/jobs/widgets/jobs.json?limit=3',
+        dataType: 'jsonp',
+        success: function(data) {
+          var list = $("<ul></ul>");
+          $.each(data.jobs, function(idx, job) {
+            var item = "<li><a href='"+job.url+"' target='_blank'>" +
+              "<span class='positionTitle'>"+job.title+"</span>" +
+              "<span class='location'><span class='companyName'>"+job.company_name+"</span> in "+job.location+"</span>" +
+              "</a>" +
+              "</li>";
+            list.append(item);
+          });
+            // Customize This
+          $("#zurbJobsWidget").html(list);
+        }
+      });
+
+      // For Kitchen Sink Page
+      $('#start-jr').on('click', function() {
+        $(document).foundation('joyride','start');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1801 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicons/apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicons/apple-touch-icon-114x114-precomposed.png">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicons/apple-touch-icon-72x72-precomposed.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <title>Foundation Docs: Sass</title>
+    <link rel="stylesheet" href="http://hiromi:4001/assets/normalize.css" />
+    <link rel="stylesheet" href="http://hiromi:4001/assets/docs.css" />
+    <script src="http://hiromi:4001/assets/vendor/custom.modernizr.js"></script>
+  </head>
+  <body class="antialiased">
+
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">Foundation</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="/grid.php">Features</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates.php">Add-ons</a></li>
+          <li class="divider"></li>
+          <li><a href="/case-jacquelinewest.php">Case Studies</a></li>
+          <li class="divider"></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li class="divider"></li>
+          <li><a href="/training.php">Training</a></li>
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="http://foundation.zurb.com/docs" class="button">Getting Started</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 class="docs header"><a href="http://foundation.zurb.com/docs/">Foundation 4 Documentation</a></h1>
+        <h6 class="docs subheader"><a href="http://foundation.zurb.com/old-docs/f3">Want F3 Docs?</a></h6>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="large-9 push-3 columns">
+
+    <h2>Using the Sass Version of Foundation</h2>
+    <h4 class="subheader">Start using Foundation the way you want, with more control than ever before. We've made it really easy to install using Compass so you'll need a little bit of knowledge before you get going. Visit the <a href="http://compass-style.org">Compass</a> and <a href="http://sass-lang.com">Sass</a> sites to learn the basics if you don't already know them.</h4>
+
+    <h4>Recommended Installation</h4>
+    <p>To create your first project using our Compass extension, you'll need to have the <kbd>zurb-foundation</kbd> gem installed. This will install Foundation and all necessary dependencies. Here's the command that will do this for you:</p>
+    <p class="btm-marg keystroke">[sudo] gem install zurb-foundation</p>
+    <br>
+    <em style="font-size: 12px;">Note: Make sure ZURB isn't all caps.</em>
+
+    <br><br>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <h5>Upgrading Your Gem</h5>
+        <p>To upgrade your gem to the latest public release, just paste this snippet into your command line:</p>
+        <p class="keystroke">[sudo] gem update zurb-foundation</p>
+      </div>
+      <div class="large-6 columns">
+        <h5>Release Candidates</h5>
+        <p>Stay on top of the latest before official releases by installing release candidates with this command:</p>
+        <p class="btm-marg keystroke">[sudo] gem install zurb-foundation --pre</p>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <a name="create-compass"></a>
+    <h2>Creating your first project</h2>
+    <h5 class="subheader">Compass makes it really easy to start a new project. Since you've installed the Foundation gem by now, you just need to install Compass to get going.</h5>
+    <p>Follow these two steps to get going:</p>
+    <ol style="margin-left: 20px;">
+      <li><span class="keystroke">[sudo] gem install compass</span></li>
+      <li><span class="keystroke">cd path/to/where-you-want-your-project</span></li>
+      <li>run <span class="keystroke">compass create &lt;project-name&gt; -r zurb-foundation --using foundation</span></li>
+    </ol>
+
+    <hr>
+
+    <h3>Using Sass Standalone</h3>
+    <p>With Foundation 4, we've removed all dependencies from the framework. This means you can use Foundation with Sass alone and add Compass, Bourbon, or whatever on top of it. To help get going using only Sass, you'll just need to download the <a href="https://github.com/zurb/foundation/tree/scss-standalone">files from Github</a> and put them into your project directory. From there you just need to <code>@import</code> the parts of Foundation you need.</p>
+
+    <a class="small button secondary" href="https://github.com/zurb/foundation/tree/scss-standalone">Sass Standalone Branch on Github</a>
+
+    <p>To import all of Foundation:</p>
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">/path/to/foundation</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+    <p>If you want to override the built in variables, you can find them on each component page or grab the <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/_variables.scss">entire list from Github</a>. From there, you'll need to link your settings file above your Foundation import, like so:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">/path/to/settings</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">/path/to/foundation</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+    <p>If you want to pick and choose which pieces of Foundation you want, the pieces you need are:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Each individual part that can be added in */</span>
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/global</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/grid</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/visibility</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/block-grid</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/type</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/buttons</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/forms</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/custom-forms</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/button-groups</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/dropdown-buttons</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/split-buttons</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/flex-video</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/section</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/top-bar</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/orbit</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/reveal</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/joyride</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/clearing</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/alert-boxes</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/breadcrumbs</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/keystrokes</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/labels</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/inline-lists</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/pagination</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/panels</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/pricing-tables</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/progress-bars</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/side-nav</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/sub-nav</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/switch</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/magellan</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/tables</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/thumbs</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/tooltips</span><span class="delimiter">&quot;</span></span>;
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/dropdown</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+    <hr>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Compiling Your Scss with Compass</h3>
+        <p>To compile your Scss into CSS you run a simple command that will watch for saves and compile each time you save an Scss file. From the directory of your <kbd>config.rb</kbd> file, the command is:</p>
+        <p class="btm-marg keystroke">compass watch</p>
+        <br>
+        <p>If you are in a different directory you can use the same command, but navigate to where your <kbd>config.rb</kbd> file is. The command looks like:</p>
+        <p class="btm-marg keystroke">compass watch path/to/project</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Compiling Your Scss with Sass</h3>
+        <p class="btm-marg keystroke">sass --watch your/scss/directory:your/css/directory</p>
+        <br>
+        <p>You can watch individual files or the entire directory, we usually watch the entire directory when using Sass standalone.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <a name="compass-existing"></a>
+    <h3>Working with Existing projects</h3>
+    <h5 class="subheader">There are a couple situations to cover here. You might be adding Foundation to an existing project that wasn't build with Foundation or you might be upgrading Foundation for an already created Foundation Compass project.</h5>
+
+    <h5>Adding Foundation to existing Compass projects</h5>
+    <p>If you've created a project using Compass, but didn't require the Foundation gem, you'll need to install it separately. When you do this you'll get all the necessary files on top of the ones you already have. If something is a duplicate, Compass will ignore it. The steps you'll take to properly install Foundation are:</p>
+    <ol style="margin-left: 20px;">
+      <li>Add <span class="keystroke">require "zurb-foundation"</span> to your config.rb file</li>
+      <li><span class="keystroke">cd path/to/your-project</span></li>
+      <li>run <span class="keystroke">compass install foundation</span></li>
+    </ol>
+
+    <h5>Adding Foundation to existing Rails projects</h5>
+    <ol>
+        <li>Add <span class="keystroke">gem 'zurb-foundation'</span> to your Gemfile <b>under the <span class="keystroke">assets</span> group</b></li>
+        <li>run <span class="keystroke">bundle install</span></li>
+        <li>run <span class="keystroke">rails g foundation:install</span></li>
+    </ol>
+
+    <h5>Upgrading Foundation Compass projects</h5>
+    <p><strong>Javascript Updates:</strong> If you already added Foundation to your Compass project or created the project using Foundation in the first place and just want to copy over any updated javascripts/image assets to your project, use the provided <kbd>foundation/upgrade</kbd> pattern below:</p>
+    <ol style="margin-left: 20px;">
+      <li><span class="keystroke">cd /path/to/your-project</span></li>
+      <li>run <span class="keystroke">compass install -r zurb-foundation foundation/upgrade --force</span></li>
+    </ol>
+
+    <p><strong>Settings file updates:</strong> You can also upgrade Foundation as a whole, which will override the existing Foundation styles and your settings file. So if you've made changes to your settings file and want to make sure your project is on the latest version of Foundation, make sure you backup your settings file before you begin. Alternatively, you can copy/paste the settings from our file and <strong>@import</strong> your own so they don't get erased.</p>
+
+    <p>We also recommend creating a <code>foundation-overrides.scss</code> file that you can use for your own specific styles. This will ensure that your styles don't get obliterated upon updating. <strong>We do not recommend directly editing the Foundation files if you plan to upgrade.</strong> To update you project, use the following steps:</p>
+
+    <ol style="margin-left: 20px;">
+      <li>Make sure you've updated your system version of the gem or upgrading won't work.</li>
+      <li><span class="keystroke">cd /path/to/your-project</span></li>
+      <li>run <span class="keystroke">compass install -r zurb-foundation foundation</span></li>
+    </ol>
+
+    <hr>
+
+    <a name="project-git"></a>
+    <h3>Creating a project from Git</h3>
+    <h5 class="subheader">Sometimes you want to checkout what we've got even before we decide to deploy a release candidate. For these situations, you can install using Bundler.</h5>
+
+    <p>There are a few different ways to do this, but here's what we recommend:</p>
+    <ol style="margin-left: 20px;">
+      <li>Setup a folder for your project (i.e. <kbd>mkdir ~/awesomeapp</kbd>)
+      <li>Create a file called <code>Gemfile</code> in the folder you just created with this content: <br>
+<div class='ruby'><div class="CodeRay">
+  <div class="code"><pre>
+source <span class="string"><span class="delimiter">&quot;</span><span class="content">https://rubygems.org</span><span class="delimiter">&quot;</span></span>
+gem <span class="string"><span class="delimiter">&quot;</span><span class="content">zurb-foundation</span><span class="delimiter">&quot;</span></span>, <span class="symbol">:git</span> =&gt; <span class="string"><span class="delimiter">&quot;</span><span class="content">git@github.com:zurb/foundation.git</span><span class="delimiter">&quot;</span></span>
+gem <span class="string"><span class="delimiter">&quot;</span><span class="content">compass</span><span class="delimiter">&quot;</span></span>
+</pre></div>
+</div>
+</div>
+      </li>
+      <li>Change into your application directory (<kbd>cd ~/awesomeapp</kbd>) then create a new compass project using the following command:</li>
+<div class='bash'><div class="CodeRay">
+  <div class="code"><pre>
+bundle <span class="function">exec</span> compass create <span class="reserved">. </span>-r zurb-foundation --using foundation
+</pre></div>
+</div>
+</div>
+      <li>When you're working on your project, run: <kbd>bundle exec compass watch</kbd></li>
+    </ol>
+
+    <hr>
+
+    <a name="multiple-versions"></a>
+    <h3>Running multiple versions</h3>
+    <h5 class="subheader">If you're planning on running multiple, potentially incompatible versions of Foundation you can isolate them using Bundler as well.</h5>
+
+    <p>There are a few different ways to do this, but here's what we recommend:</p>
+    <ol style="margin-left: 20px;">
+      <li>Setup a folder for your project (i.e. <kbd>mkdir ~/awesomeapp</kbd>)
+      <li>Create a file called <code>Gemfile</code> in the folder you just created with this content: <br>
+<div class='ruby'><div class="CodeRay">
+  <div class="code"><pre>
+source <span class="string"><span class="delimiter">&quot;</span><span class="content">https://rubygems.org</span><span class="delimiter">&quot;</span></span>
+<span class="comment"># Replace 4.0.3 with the version of Foundation you want to use</span>
+gem <span class="string"><span class="delimiter">&quot;</span><span class="content">zurb-foundation</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">4.0.3</span><span class="delimiter">&quot;</span></span>
+gem <span class="string"><span class="delimiter">&quot;</span><span class="content">compass</span><span class="delimiter">&quot;</span></span>
+</pre></div>
+</div>
+</div>
+      </li>
+      <li>Change into your application directory (<kbd>cd ~/awesomeapp</kbd>) then create a new compass project using the following command:</li>
+<div class='bash'><div class="CodeRay">
+  <div class="code"><pre>
+bundle <span class="function">exec</span> compass create <span class="reserved">. </span>-r zurb-foundation --using foundation
+</pre></div>
+</div>
+</div>
+      <li>When you're working on your project, run: <kbd>bundle exec compass watch</kbd></li>
+    </ol>
+
+    <p>Zach Shnackel recently wrote a good article that goes into a bit more detail on this subject: <a rel="nofollow" href="http://zslabs.com/articles/versioned-dependencies-with-compass">http://zslabs.com/articles/versioned-dependencies-with-compass</a></p>
+
+    <hr>
+
+    <a name="codekit"></a>
+    <h3>Compiling with CodeKit</h3>
+    <p>Previous version of Foundation were a bit harder to compile with codekit because of the structure of the Foundation files. We just went through a round of testing with a default project directory, created with the gem. Here are the instructions to follow to get CodeKit working properly:</p>
+
+    <ul>
+      <li>Create a project: <kbd>compass create <em>project-name</em> -r zurb-foundation --using foundation</kbd></li>
+      <li>Open CodeKit and drag that project folder into the side panel or add it with the "+" button.</li>
+      <li>Compile away!</li>
+    </ul>
+
+    <p><em>This works with the default version of Sass and Compass that CodeKit comes with. Since Compass isn't a dependency for Foundation any longer, if you want to use it, make sure you have it installed and @imported at the top of your main .scss file.</em></p>
+
+    <hr>
+
+    <h3>Foundation Global Settings and Mixins</h3>
+    <p>We've included a global settings file that holds variables and mixins that are used throughout the entirety of Foundation. Here's a look at that file:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Foundation Variables */</span>
+
+<span class="comment">/* The default font-size is set to 100% of the browser style sheet (usually 16px) */</span>
+<span class="comment">/* for compatibility with browser-based text zoom or user-set defaults. */</span>
+<span class="error">$</span><span class="type">base-font-size</span>: <span class="float">100%</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="error">$</span><span class="type">base-line-height</span> <span class="type">is</span> <span class="float">24px</span> <span class="type">while</span> <span class="error">$</span><span class="type">base-font-size</span> <span class="type">is</span> <span class="float">16px</span>
+<span class="error">$</span><span class="type">base-line-height</span>: <span class="float">150%</span>;
+
+<span class="comment">/* This is the default html and body font-size for the base em value. */</span>
+
+<span class="comment">/* Since the typical default browser font-size is 16px, that makes the calculation for grid size. */</span>
+<span class="comment">/* If you want your base font-size to be a different size and not have it effect grid size too, */</span>
+<span class="comment">/* set the value of $em-base to $base-font-size ($em-base: $base-font-size;) */</span>
+<span class="error">$</span><span class="type">em-base</span>: <span class="float">16px</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px) */</span>
+<span class="directive">@function</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="error">$</span><span class="type">pxWidth</span>) {
+  <span class="directive">@return</span> <span class="error">$</span><span class="key">pxWidth</span> / <span class="error">$</span><span class="key">em-base</span> <span class="error">*</span> <span class="float">1em</span>;
+}
+
+<span class="comment">/* Change whether or not you include browser prefixes */</span>
+<span class="error">$</span><span class="type">experimental</span>: <span class="type">true</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* Various global styles */</span>
+
+<span class="error">$</span><span class="type">default-float</span>: <span class="type">left</span>;
+
+<span class="error">$</span><span class="type">body-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">body-font-color</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">body-font-family</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Helvetica Neue</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Helvetica</span><span class="delimiter">&quot;</span></span>, <span class="type">Helvetica</span>, <span class="type">Arial</span>, <span class="type">sans-serif</span>;
+<span class="error">$</span><span class="type">body-font-weight</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">body-font-style</span>: <span class="type">normal</span>;
+
+<span class="comment">/* Font-smoothing */</span>
+
+<span class="error">$</span><span class="type">font-smoothing</span>: <span class="type">antialiased</span>;
+
+<span class="comment">/* Text direction settings */</span>
+
+<span class="error">$</span><span class="type">text-direction</span>: <span class="type">ltr</span>;
+
+<span class="comment">/* Colors */</span>
+
+<span class="error">$</span><span class="type">primary-color</span>: <span class="constant">#2ba6cb</span>;
+<span class="error">$</span><span class="type">secondary-color</span>: <span class="constant">#e9e9e9</span>;
+<span class="error">$</span><span class="type">alert-color</span>: <span class="constant">#c60f13</span>;
+<span class="error">$</span><span class="type">success-color</span>: <span class="constant">#5da423</span>;
+
+<span class="comment">/* Make sure border radius matches unless we want it different. */</span>
+
+<span class="error">$</span><span class="type">global-radius</span>: <span class="float">3px</span>;
+<span class="error">$</span><span class="type">global-rounded</span>: <span class="float">1000px</span>;
+
+<span class="comment">/* Inset shadow shiny edges and depressions. */</span>
+
+<span class="error">$</span><span class="type">shiny-edge-size</span>: <span class="float">0</span> <span class="float">1px</span> <span class="float">0</span>;
+<span class="error">$</span><span class="type">shiny-edge-color</span>: <span class="color">rgba(#fff, .5)</span>;
+<span class="error">$</span><span class="type">shiny-edge-active-color</span>: <span class="color">rgba(#000, .2)</span>;
+
+<span class="comment">/* Control whether or not CSS classes come through in the CSS files. */</span>
+
+<span class="error">$</span><span class="type">include-html-classes</span>: <span class="type">true</span>;
+<span class="error">$</span><span class="type">include-print-styles</span>: <span class="type">true</span>;
+<span class="error">$</span><span class="type">include-html-global-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-type-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-grid-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-visibility-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-button-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-form-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-custom-form-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-media-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-section-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-orbit-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-reveal-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-joyride-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-clearing-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-alert-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-nav-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-top-bar-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-label-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-panel-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-pricing-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-progress-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-magellan-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+<span class="error">$</span><span class="type">include-html-tooltip-classes</span>: <span class="error">$</span><span class="type">include-html-classes</span>;
+
+<span class="comment">/* Media Queries */</span>
+
+<span class="error">$</span><span class="type">small-screen</span>: <span class="float">768px</span>;
+<span class="error">$</span><span class="type">medium-screen</span>: <span class="float">1280px</span>;
+<span class="error">$</span><span class="type">large-screen</span>: <span class="float">1440px</span>;
+
+<span class="error">$</span><span class="type">screen</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">small</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (min-width: #{$small-screen})</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">medium</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (min-width: #{$medium-screen})</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">large</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (min-width: #{$large-screen})</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">landscape</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (orientation: landscape)</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">portrait</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (orientation: portrait)</span><span class="delimiter">&quot;</span></span>;
+
+<span class="comment">/* Cursors */</span>
+
+<span class="comment">/* Custom use example -&gt; $cursor-default-value: url(http://cursors-site.net/path/to/custom/cursor/default.cur),progress; */</span>
+
+<span class="error">$</span><span class="type">cursor-crosshair-value</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">crosshair</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">cursor-default-value</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">default</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">cursor-pointer-value</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">pointer</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">cursor-help-value</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">help</span><span class="delimiter">&quot;</span></span>;
+
+
+<span class="comment">/* Grid Variables */</span>
+
+
+<span class="error">$</span><span class="type">row-width</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">1000px</span>);
+<span class="error">$</span><span class="type">column-gutter</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">30px</span>);
+<span class="error">$</span><span class="type">total-columns</span>: <span class="float">12</span>;
+
+
+<span class="comment">/* Block Grid Variables */</span>
+
+
+<span class="comment">/* Maximum number of block grid elements per row */</span>
+
+<span class="error">$</span><span class="type">block-grid-elements</span>: <span class="float">12</span>;
+<span class="error">$</span><span class="type">block-grid-default-spacing</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Enables media queries for block-grid classes. Set to false if writing semantic HTML. */</span>
+
+<span class="error">$</span><span class="type">block-grid-media-queries</span>: <span class="type">true</span>;
+
+
+<span class="comment">/* Typography Variables */</span>
+
+
+<span class="comment">/* Heading font styles */</span>
+
+<span class="error">$</span><span class="type">header-font-family</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Helvetica Neue</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Helvetica</span><span class="delimiter">&quot;</span></span>, <span class="type">Helvetica</span>, <span class="type">Arial</span>, <span class="type">sans-serif</span>;
+<span class="error">$</span><span class="type">header-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">header-font-style</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">header-font-color</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">header-line-height</span>: <span class="float">1</span><span class="class">.4</span>;
+<span class="error">$</span><span class="type">header-top-margin</span>: <span class="class">.2em</span>;
+<span class="error">$</span><span class="type">header-bottom-margin</span>: <span class="class">.5em</span>;
+<span class="error">$</span><span class="type">header-text-rendering</span>: <span class="type">optimizeLegibility</span>;
+
+<span class="comment">/* Heading font sizes */</span>
+
+<span class="error">$</span><span class="type">h1-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">44px</span>);
+<span class="error">$</span><span class="type">h2-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">37px</span>);
+<span class="error">$</span><span class="type">h3-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">27px</span>);
+<span class="error">$</span><span class="type">h4-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">23px</span>);
+<span class="error">$</span><span class="type">h5-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">18px</span>);
+<span class="error">$</span><span class="type">h6-font-size</span>: <span class="float">1em</span>;
+
+<span class="comment">/* Subheaders */</span>
+
+<span class="error">$</span><span class="type">subheader-line-height</span>: <span class="float">1</span><span class="class">.4</span>;
+<span class="error">$</span><span class="type">subheader-font-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">header-font-color</span>, <span class="float">30%</span>);
+<span class="error">$</span><span class="type">subheader-font-weight</span>: <span class="float">300</span>;
+<span class="error">$</span><span class="type">subheader-top-margin</span>: <span class="class">.2em</span>;
+<span class="error">$</span><span class="type">subheader-bottom-margin</span>: <span class="class">.5em</span>;
+
+<span class="comment">/* &lt;small&gt; styling */</span>
+
+<span class="error">$</span><span class="type">small-font-size</span>: <span class="float">60%</span>;
+<span class="error">$</span><span class="type">small-font-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">header-font-color</span>, <span class="float">30%</span>);
+
+<span class="comment">/* Paragraphs */</span>
+
+<span class="error">$</span><span class="type">paragraph-font-family</span>: <span class="type">inherit</span>;
+<span class="error">$</span><span class="type">paragraph-font-weight</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">paragraph-font-size</span>: <span class="float">1em</span>;
+<span class="error">$</span><span class="type">paragraph-line-height</span>: <span class="float">1</span><span class="class">.6</span>;
+<span class="error">$</span><span class="type">paragraph-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">paragraph-aside-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">paragraph-aside-line-height</span>: <span class="float">1</span><span class="class">.35</span>;
+<span class="error">$</span><span class="type">paragraph-aside-font-style</span>: <span class="type">italic</span>;
+
+<span class="comment">/* &lt;code&gt; tags */</span>
+
+<span class="error">$</span><span class="type">code-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">alert-color</span>, <span class="float">15%</span>);
+<span class="error">$</span><span class="type">code-font-family</span>: <span class="type">Consolas</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Liberation Mono</span><span class="delimiter">&quot;</span></span>, <span class="type">Courier</span>, <span class="type">monospace</span>;
+<span class="error">$</span><span class="type">code-font-weight</span>: <span class="type">bold</span>;
+
+<span class="comment">/* Anchors */</span>
+
+<span class="error">$</span><span class="type">anchor-text-decoration</span>: <span class="type">none</span>;
+<span class="error">$</span><span class="type">anchor-font-color</span>: <span class="error">$</span><span class="type">primary-color</span>;
+<span class="error">$</span><span class="type">anchor-font-color-hover</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">primary-color</span>, <span class="float">5%</span>);
+
+<span class="comment">/* &lt;hr&gt; element */</span>
+
+<span class="error">$</span><span class="type">hr-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">hr-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">hr-border-color</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">hr-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Lists */</span>
+
+<span class="error">$</span><span class="type">list-style-position</span>: <span class="type">outside</span>;
+<span class="error">$</span><span class="type">list-side-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">list-nested-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">definition-list-header-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">definition-list-header-margin-bottom</span>: <span class="class">.3em</span>;
+<span class="error">$</span><span class="type">definition-list-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+
+<span class="comment">/* Blockquotes */</span>
+
+<span class="error">$</span><span class="type">blockquote-font-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">header-font-color</span>, <span class="float">30%</span>);
+<span class="error">$</span><span class="type">blockquote-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">9px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>) <span class="float">0</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">19px</span>);
+<span class="error">$</span><span class="type">blockquote-border</span>: <span class="float">1px</span> <span class="type">solid</span> <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">blockquote-cite-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">13px</span>);
+<span class="error">$</span><span class="type">blockquote-cite-font-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">header-font-color</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">blockquote-cite-link-color</span>: <span class="error">$</span><span class="type">blockquote-cite-font-color</span>;
+
+<span class="comment">/* Acronym */</span>
+
+<span class="error">$</span><span class="type">acronym-underline</span>: <span class="float">1px</span> <span class="type">dotted</span> <span class="constant">#ddd</span>;
+
+<span class="comment">/* Padding and margin */</span>
+
+<span class="error">$</span><span class="type">microformat-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+<span class="error">$</span><span class="type">microformat-margin</span>: <span class="float">0</span> <span class="float">0</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>) <span class="float">0</span>;
+
+<span class="comment">/* Border styles */</span>
+
+<span class="error">$</span><span class="type">microformat-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">microformat-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">microformat-border-color</span>: <span class="constant">#ddd</span>;
+
+<span class="comment">/* Full name font styles */</span>
+
+<span class="error">$</span><span class="type">microformat-fullname-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">microformat-fullname-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>);
+
+<span class="comment">/* Summary font styles */</span>
+
+<span class="error">$</span><span class="type">microformat-summary-font-weight</span>: <span class="type">bold</span>;
+
+<span class="comment">/* &lt;abbr&gt; padding */</span>
+
+<span class="error">$</span><span class="type">microformat-abbr-padding</span>: <span class="float">0</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">1px</span>);
+
+<span class="comment">/* &lt;abbr&gt; font styles */</span>
+
+<span class="error">$</span><span class="type">microformat-abbr-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">microformat-abbr-font-decoration</span>: <span class="type">none</span>;
+
+
+<span class="comment">/* Form Variables */</span>
+
+
+<span class="comment">/* Base for lots of form spacing and positioning styles */</span>
+
+<span class="error">$</span><span class="type">form-spacing</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">16px</span>);
+
+<span class="comment">/* Labels */</span>
+
+<span class="error">$</span><span class="type">form-label-pointer</span>: <span class="type">pointer</span>;
+<span class="error">$</span><span class="type">form-label-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">form-label-font-weight</span>: <span class="float">500</span>;
+<span class="error">$</span><span class="type">form-label-font-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#000</span>, <span class="float">30%</span>);
+<span class="error">$</span><span class="type">form-label-bottom-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+<span class="error">$</span><span class="type">input-font-family</span>: <span class="type">inherit</span>;
+<span class="error">$</span><span class="type">input-font-color</span>: <span class="color">rgba(0,0,0,0.75)</span>;
+<span class="error">$</span><span class="type">input-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">input-bg-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">input-focus-bg-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">2%</span>);
+<span class="error">$</span><span class="type">input-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">input-focus-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">40%</span>);
+<span class="error">$</span><span class="type">input-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">input-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">input-disabled-bg</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">input-box-shadow</span>: <span class="type">inset</span> <span class="float">0</span> <span class="float">1px</span> <span class="float">2px</span> <span class="color">rgba(0,0,0,0.1)</span>;
+<span class="error">$</span><span class="type">input-include-glowing-effect</span>: <span class="type">true</span>;
+
+<span class="comment">/* Fieldset border and spacing. */</span>
+
+<span class="error">$</span><span class="type">fieldset-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">fieldset-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">fieldset-border-color</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">fieldset-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">fieldset-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">18px</span>) <span class="float">0</span>;
+
+<span class="comment">/* Legends */</span>
+
+<span class="error">$</span><span class="type">legend-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">legend-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">legend-padding</span>: <span class="float">0</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+
+<span class="comment">/* Prefix and postfix input elements */</span>
+
+<span class="error">$</span><span class="type">input-prefix-bg</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">5%</span>);
+<span class="error">$</span><span class="type">input-prefix-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">input-prefix-border-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">input-prefix-border-type</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">input-prefix-overflow</span>: <span class="type">hidden</span>;
+<span class="error">$</span><span class="type">input-prefix-font-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">input-prefix-font-color-alt</span>: <span class="constant">#fff</span>;
+
+<span class="comment">/* Error states for inputs and labels */</span>
+
+<span class="error">$</span><span class="type">input-error-message-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">6px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">4px</span>);
+<span class="error">$</span><span class="type">input-error-message-top</span>: <span class="error">-</span>(<span class="error">$</span><span class="type">form-spacing</span>) <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>);
+<span class="error">$</span><span class="type">input-error-message-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+<span class="error">$</span><span class="type">input-error-message-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">input-error-message-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">input-error-message-font-color-alt</span>: <span class="constant">#333</span>;
+
+<span class="comment">/* Glowing effect of inputs when focused */</span>
+
+<span class="error">$</span><span class="type">glowing-effect-fade-time</span>: <span class="float">0.45s</span>;
+<span class="error">$</span><span class="type">glowing-effect-color</span>: <span class="error">$</span><span class="type">input-focus-border-color</span>;
+
+
+<span class="comment">/* Button Variables */</span>
+
+
+<span class="comment">/* Padding for buttons. */</span>
+
+<span class="error">$</span><span class="type">button-tny</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">7px</span>);
+<span class="error">$</span><span class="type">button-sml</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">9px</span>);
+<span class="error">$</span><span class="type">button-med</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+<span class="error">$</span><span class="type">button-lrg</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">16px</span>);
+
+<span class="comment">/* Display property. */</span>
+
+<span class="error">$</span><span class="type">button-display</span>: <span class="type">inline-block</span>;
+<span class="error">$</span><span class="type">button-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Button text styles. */</span>
+
+<span class="error">$</span><span class="type">button-font-family</span>: <span class="type">inherit</span>;
+<span class="error">$</span><span class="type">button-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">button-font-color-alt</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">button-font-med</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">16px</span>);
+<span class="error">$</span><span class="type">button-font-tny</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">11px</span>);
+<span class="error">$</span><span class="type">button-font-sml</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">13px</span>);
+<span class="error">$</span><span class="type">button-font-lrg</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">button-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">button-font-align</span>: <span class="type">center</span>;
+
+<span class="comment">/* Various hover effects. */</span>
+
+<span class="error">$</span><span class="type">button-function-factor</span>: <span class="float">10%</span>;
+
+<span class="comment">/* Button border styles. */</span>
+
+<span class="error">$</span><span class="type">button-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">button-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">button-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">primary-color</span>, <span class="error">$</span><span class="type">button-function-factor</span>);
+
+<span class="comment">/* Radius used throughout the core. */</span>
+
+<span class="error">$</span><span class="type">button-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+
+<span class="comment">/* Opacity for disabled buttons. */</span>
+
+<span class="error">$</span><span class="type">button-disabled-opacity</span>: <span class="float">0</span><span class="class">.6</span>;
+
+
+<span class="comment">/* Button Groups */</span>
+
+
+<span class="comment">/* Sets the margin for the right side by default, and the left margin if right-to-left direction is used */</span>
+
+<span class="error">$</span><span class="type">button-bar-margin-opposite</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+
+
+<span class="comment">/* Dropdown Button Variables */</span>
+
+
+<span class="comment">/* Color of the pip in dropdown buttons */</span>
+
+<span class="error">$</span><span class="type">dropdown-button-pip-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-color-alt</span>: <span class="constant">#333</span>;
+
+<span class="comment">/* Tiny dropdown buttons */</span>
+
+<span class="error">$</span><span class="type">dropdown-button-padding-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">5</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-size-tny</span>: <span class="error">$</span><span class="type">button-tny</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-right-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">2</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-top-tny</span>: <span class="error">-</span><span class="error">$</span><span class="type">button-tny</span> / <span class="float">2</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">1px</span>);
+
+<span class="comment">/* Small dropdown buttons */</span>
+
+<span class="error">$</span><span class="type">dropdown-button-padding-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">5</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-size-sml</span>: <span class="error">$</span><span class="type">button-sml</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-right-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">2</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-top-sml</span>: <span class="error">-</span><span class="error">$</span><span class="type">button-sml</span> / <span class="float">2</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">1px</span>);
+
+<span class="comment">/* Medium dropdown buttons */</span>
+
+<span class="error">$</span><span class="type">dropdown-button-padding-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">4</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+<span class="error">$</span><span class="type">dropdown-button-pip-size-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+<span class="error">$</span><span class="type">dropdown-button-pip-right-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">2</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-top-med</span>: <span class="error">-</span><span class="error">$</span><span class="type">button-med</span> / <span class="float">2</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">2px</span>);
+
+<span class="comment">/* Large dropdown buttons */</span>
+
+<span class="error">$</span><span class="type">dropdown-button-padding-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="type">*</span> <span class="float">4</span>;
+<span class="error">$</span><span class="type">dropdown-button-pip-size-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">6px</span>);
+<span class="error">$</span><span class="type">dropdown-button-pip-right-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+<span class="error">$</span><span class="type">dropdown-button-pip-top-lrg</span>: <span class="error">-</span><span class="error">$</span><span class="type">button-lrg</span> / <span class="float">2</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+
+
+<span class="comment">/* Split Button Variables */</span>
+
+
+<span class="comment">/* Shared styles for Split Buttons */</span>
+
+<span class="error">$</span><span class="type">split-button-function-factor</span>: <span class="float">15%</span>;
+<span class="error">$</span><span class="type">split-button-pip-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">split-button-pip-color-alt</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">split-button-active-bg-tint</span>: <span class="color">rgba(0,0,0,0.1)</span>;
+
+<span class="comment">/* Tiny split buttons */</span>
+
+<span class="error">$</span><span class="type">split-button-padding-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">9</span>;
+<span class="error">$</span><span class="type">split-button-span-width-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">6</span><span class="class">.5</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-tny</span>: <span class="error">$</span><span class="type">button-tny</span>;
+<span class="error">$</span><span class="type">split-button-pip-top-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">2</span>;
+<span class="error">$</span><span class="type">split-button-pip-left-tny</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-5px</span>);
+
+<span class="comment">/* Small split buttons */</span>
+
+<span class="error">$</span><span class="type">split-button-padding-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">7</span>;
+<span class="error">$</span><span class="type">split-button-span-width-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">5</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-sml</span>: <span class="error">$</span><span class="type">button-sml</span>;
+<span class="error">$</span><span class="type">split-button-pip-top-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">1</span><span class="class">.5</span>;
+<span class="error">$</span><span class="type">split-button-pip-left-sml</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-9px</span>);
+
+<span class="comment">/* Medium split buttons */</span>
+
+<span class="error">$</span><span class="type">split-button-padding-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">6</span><span class="class">.4</span>;
+<span class="error">$</span><span class="type">split-button-span-width-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">4</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+<span class="error">$</span><span class="type">split-button-pip-top-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">1</span><span class="class">.5</span>;
+<span class="error">$</span><span class="type">split-button-pip-left-med</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-9px</span>);
+
+<span class="comment">/* Large split buttons */</span>
+
+<span class="error">$</span><span class="type">split-button-padding-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="type">*</span> <span class="float">6</span>;
+<span class="error">$</span><span class="type">split-button-span-width-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="type">*</span> <span class="float">3</span><span class="class">.75</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">6px</span>);
+<span class="error">$</span><span class="type">split-button-pip-top-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>);
+<span class="error">$</span><span class="type">split-button-pip-left-lrg</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-9px</span>);
+
+
+<span class="comment">/* Alert Variables */</span>
+
+
+<span class="comment">/* Alert padding */</span>
+
+<span class="error">$</span><span class="type">alert-padding-top</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">11px</span>);
+<span class="error">$</span><span class="type">alert-padding-default-float</span>: <span class="error">$</span><span class="type">alert-padding-top</span>;
+<span class="error">$</span><span class="type">alert-padding-opposite-direction</span>: <span class="error">$</span><span class="type">alert-padding-top</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+<span class="error">$</span><span class="type">alert-padding-bottom</span>: <span class="error">$</span><span class="type">alert-padding-top</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">1px</span>);
+
+<span class="comment">/* Text style */</span>
+
+<span class="error">$</span><span class="type">alert-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">alert-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">alert-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">alert-font-color-alt</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">secondary-color</span>, <span class="float">60%</span>);
+
+<span class="comment">/* Hover effect */</span>
+
+<span class="error">$</span><span class="type">alert-function-factor</span>: <span class="float">10%</span>;
+
+<span class="comment">/* Border Styles */</span>
+
+<span class="error">$</span><span class="type">alert-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">alert-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">alert-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">primary-color</span>, <span class="error">$</span><span class="type">alert-function-factor</span>);
+<span class="error">$</span><span class="type">alert-bottom-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Close Button style */</span>
+
+<span class="error">$</span><span class="type">alert-close-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">alert-close-position</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>);
+<span class="error">$</span><span class="type">alert-close-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">22px</span>);
+<span class="error">$</span><span class="type">alert-close-opacity</span>: <span class="float">0</span><span class="class">.3</span>;
+<span class="error">$</span><span class="type">alert-close-opacity-hover</span>: <span class="float">0</span><span class="class">.5</span>;
+<span class="error">$</span><span class="type">alert-close-padding</span>: <span class="float">5px</span> <span class="float">4px</span> <span class="float">4px</span>;
+
+<span class="comment">/* Border radius */</span>
+
+<span class="error">$</span><span class="type">alert-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+
+
+<span class="comment">/* Breadcrumb Variables */</span>
+
+<span class="comment">/* Background color for the breadcrumb container. */</span>
+
+<span class="error">$</span><span class="type">crumb-bg</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">secondary-color</span>, <span class="float">5%</span>);
+
+<span class="comment">/* Padding around the breadcrumbs. */</span>
+
+<span class="error">$</span><span class="type">crumb-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">6px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">9px</span>);
+<span class="error">$</span><span class="type">crumb-side-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+
+<span class="comment">/* Border styles. */</span>
+
+<span class="error">$</span><span class="type">crumb-function-factor</span>: <span class="float">10%</span>;
+<span class="error">$</span><span class="type">crumb-border-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">crumb-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">crumb-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">crumb-bg</span>, <span class="error">$</span><span class="type">crumb-function-factor</span>);
+<span class="error">$</span><span class="type">crumb-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+
+<span class="comment">/* Various text styles for breadcrumbs. */</span>
+
+<span class="error">$</span><span class="type">crumb-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">11px</span>);
+<span class="error">$</span><span class="type">crumb-font-color</span>: <span class="error">$</span><span class="type">primary-color</span>;
+<span class="error">$</span><span class="type">crumb-font-color-current</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">crumb-font-color-unavailable</span>: <span class="constant">#999</span>;
+<span class="error">$</span><span class="type">crumb-font-transform</span>: <span class="type">uppercase</span>;
+<span class="error">$</span><span class="type">crumb-link-decor</span>: <span class="type">underline</span>;
+
+<span class="comment">/* Slash between breadcrumbs */</span>
+
+<span class="error">$</span><span class="type">crumb-slash-color</span>: <span class="constant">#aaa</span>;
+<span class="error">$</span><span class="type">crumb-slash</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">/</span><span class="delimiter">&quot;</span></span>;
+
+
+<span class="comment">/* Clearing Variables */</span>
+
+<span class="comment">/* Background colors for parts of Clearing. */</span>
+
+<span class="error">$</span><span class="type">clearing-bg</span>: <span class="constant">#111</span>;
+<span class="error">$</span><span class="type">clearing-caption-bg</span>: <span class="error">$</span><span class="type">clearing-bg</span>;
+<span class="error">$</span><span class="type">clearing-carousel-bg</span>: <span class="constant">#111</span>;
+<span class="error">$</span><span class="type">clearing-img-bg</span>: <span class="error">$</span><span class="type">clearing-bg</span>;
+
+<span class="comment">/* Close button */</span>
+
+<span class="error">$</span><span class="type">clearing-close-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">clearing-close-size</span>: <span class="float">40px</span>;
+
+<span class="comment">/* Style the arrows */</span>
+
+<span class="error">$</span><span class="type">clearing-arrow-size</span>: <span class="float">16px</span>;
+<span class="error">$</span><span class="type">clearing-arrow-color</span>: <span class="error">$</span><span class="type">clearing-close-color</span>;
+
+<span class="comment">/* Style captions */</span>
+
+<span class="error">$</span><span class="type">clearing-caption-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">clearing-caption-padding</span>: <span class="float">10px</span> <span class="float">30px</span>;
+
+<span class="comment">/* Make the image and carousel height and style */</span>
+
+<span class="error">$</span><span class="type">clearing-active-img-height</span>: <span class="float">75%</span>;
+<span class="error">$</span><span class="type">clearing-carousel-height</span>: <span class="float">150px</span>;
+<span class="error">$</span><span class="type">clearing-carousel-thumb-width</span>: <span class="float">175px</span>;
+<span class="error">$</span><span class="type">clearing-carousel-thumb-active-border</span>: <span class="float">4px</span> <span class="type">solid</span> <span class="color">rgb(255,255,255)</span>;
+
+
+<span class="comment">/* Custom Form Variables */</span>
+
+<span class="comment">/* Basic form styles input styles */</span>
+
+<span class="error">$</span><span class="type">custom-form-border-color</span>: <span class="constant">#ccc</span>;
+<span class="error">$</span><span class="type">custom-form-border-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">custom-form-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">custom-form-bg-disabled</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">custom-form-input-size</span>: <span class="float">16px</span>;
+<span class="error">$</span><span class="type">custom-form-check-color</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">custom-form-check-size</span>: <span class="float">14px</span>;
+<span class="error">$</span><span class="type">custom-form-radio-size</span>: <span class="float">8px</span>;
+<span class="error">$</span><span class="type">custom-form-checkbox-radius</span>: <span class="float">0px</span>;
+
+<span class="comment">/* Custom select form element. */</span>
+
+<span class="error">$</span><span class="type">custom-select-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">custom-select-fade-to-color</span>: <span class="constant">#f3f3f3</span>;
+<span class="error">$</span><span class="type">custom-select-border-color</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">custom-select-triangle-color</span>: <span class="constant">#aaa</span>;
+<span class="error">$</span><span class="type">custom-select-triangle-color-open</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">custom-select-height</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">13px</span>) + (<span class="error">$</span><span class="type">form-spacing</span> <span class="type">*</span> <span class="float">1</span><span class="class">.5</span>);
+<span class="error">$</span><span class="type">custom-select-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">custom-select-font-color-selected</span>: <span class="constant">#141414</span>;
+<span class="error">$</span><span class="type">custom-select-disabled-color</span>: <span class="constant">#888</span>;
+
+<span class="comment">/* Custom select dropdown element. */</span>
+
+<span class="error">$</span><span class="type">custom-dropdown-height</span>: <span class="float">200px</span>;
+<span class="error">$</span><span class="type">custom-dropdown-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">custom-dropdown-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">custom-dropdown-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">custom-dropdown-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">custom-dropdown-font-color</span>: <span class="constant">#555</span>;
+<span class="error">$</span><span class="type">custom-dropdown-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">custom-dropdown-color-selected</span>: <span class="constant">#eeeeee</span>;
+<span class="error">$</span><span class="type">custom-dropdown-font-color-selected</span>: <span class="constant">#000</span>;
+<span class="error">$</span><span class="type">custom-dropdown-shadow</span>: <span class="float">0</span> <span class="float">2px</span> <span class="float">2px</span> <span class="float">0px</span> <span class="color">rgba(0,0,0,0.1)</span>;
+<span class="error">$</span><span class="type">custom-dropdown-offset-top</span>: <span class="type">none</span>;
+<span class="error">$</span><span class="type">custom-dropdown-list-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">4px</span>);
+<span class="error">$</span><span class="type">custom-dropdown-left-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">6px</span>);
+<span class="error">$</span><span class="type">custom-dropdown-right-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">38px</span>);
+<span class="error">$</span><span class="type">custom-dropdown-list-item-min-height</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">24px</span>);
+
+
+<span class="comment">/* Dropdown Variables */</span>
+
+<span class="comment">/* Height and width styles. */</span>
+
+<span class="error">$</span><span class="type">f-dropdown-max-width</span>: <span class="float">200px</span>;
+<span class="error">$</span><span class="type">f-dropdown-height</span>: <span class="type">auto</span>;
+<span class="error">$</span><span class="type">f-dropdown-max-height</span>: <span class="type">none</span>;
+<span class="error">$</span><span class="type">f-dropdown-margin-top</span>: <span class="float">2px</span>;
+
+<span class="comment">/* Background color */</span>
+
+<span class="error">$</span><span class="type">f-dropdown-bg</span>: <span class="constant">#fff</span>;
+
+<span class="comment">/* Border styles for dropdowns. */</span>
+
+<span class="error">$</span><span class="type">f-dropdown-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">f-dropdown-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">f-dropdown-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+
+<span class="comment">/* Triangle pip. */</span>
+
+<span class="error">$</span><span class="type">f-dropdown-triangle-size</span>: <span class="float">6px</span>;
+<span class="error">$</span><span class="type">f-dropdown-triangle-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">f-dropdown-triangle-side-offset</span>: <span class="float">10px</span>;
+
+<span class="comment">/* List elements. */</span>
+
+<span class="error">$</span><span class="type">f-dropdown-list-style</span>: <span class="type">none</span>;
+<span class="error">$</span><span class="type">f-dropdown-font-color</span>: <span class="constant">#555</span>;
+<span class="error">$</span><span class="type">f-dropdown-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">f-dropdown-list-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+<span class="error">$</span><span class="type">f-dropdown-line-height</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">18px</span>);
+<span class="error">$</span><span class="type">f-dropdown-list-hover-bg</span>: <span class="constant">#eeeeee</span>;
+<span class="error">$</span><span class="type">dropdown-mobile-left</span>: <span class="float">0</span>;
+
+<span class="comment">/* When the dropdown has custom content. */</span>
+
+<span class="error">$</span><span class="type">f-dropdown-content-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+
+<span class="comment">/* Flex Video Variables */</span>
+
+
+<span class="comment">/* Video container padding and margins */</span>
+
+<span class="error">$</span><span class="type">flex-video-padding-top</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">25px</span>);
+<span class="error">$</span><span class="type">flex-video-padding-bottom</span>: <span class="float">67.5%</span>;
+<span class="error">$</span><span class="type">flex-video-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">16px</span>);
+
+<span class="comment">/* Widescreen bottom padding */</span>
+
+<span class="error">$</span><span class="type">flex-video-widescreen-padding-bottom</span>: <span class="float">57.25%</span>;
+
+
+<span class="comment">/* Inline List Variables */</span>
+
+
+<span class="comment">/* Margins and padding of the inline list. */</span>
+
+<span class="error">$</span><span class="type">inline-list-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">17px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-22px</span> );
+<span class="error">$</span><span class="type">inline-list-margin</span>: <span class="float">0</span> <span class="float">0</span>;
+<span class="error">$</span><span class="type">inline-list-padding</span>: <span class="float">0</span>;
+
+<span class="comment">/* Overflow of the inline list. */</span>
+
+<span class="error">$</span><span class="type">inline-list-overflow</span>: <span class="type">hidden</span>;
+
+<span class="comment">/* List items */</span>
+
+<span class="error">$</span><span class="type">inline-list-display</span>: <span class="type">block</span>;
+
+<span class="comment">/* Elments within list items */</span>
+
+<span class="error">$</span><span class="type">inline-list-children-display</span>: <span class="type">block</span>;
+
+
+<span class="comment">/* Joyride Variables */</span>
+
+
+<span class="comment">/* Joyride styles */</span>
+
+<span class="error">$</span><span class="type">joyride-tip-bg</span>: <span class="color">rgb(0,0,0)</span>;
+<span class="error">$</span><span class="type">joyride-tip-default-width</span>: <span class="float">300px</span>;
+<span class="error">$</span><span class="type">joyride-tip-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">18px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">24px</span>);
+<span class="error">$</span><span class="type">joyride-tip-border</span>: <span class="type">solid</span> <span class="float">1px</span> <span class="constant">#555</span>;
+<span class="error">$</span><span class="type">joyride-tip-radius</span>: <span class="float">4px</span>;
+<span class="error">$</span><span class="type">joyride-tip-position-offset</span>: <span class="float">22px</span>;
+
+<span class="comment">/* Tip font styles */</span>
+
+<span class="error">$</span><span class="type">joyride-tip-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">joyride-tip-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">joyride-tip-header-weight</span>: <span class="type">bold</span>;
+
+<span class="comment">/* Changes the nub size */</span>
+
+<span class="error">$</span><span class="type">joyride-tip-nub-size</span>: <span class="float">14px</span>;
+
+<span class="comment">/* Adjusts the styles for the timer when its enabled */</span>
+
+<span class="error">$</span><span class="type">joyride-tip-timer-width</span>: <span class="float">50px</span>;
+<span class="error">$</span><span class="type">joyride-tip-timer-height</span>: <span class="float">3px</span>;
+<span class="error">$</span><span class="type">joyride-tip-timer-color</span>: <span class="constant">#666</span>;
+
+<span class="comment">/* Changes up the styles for the close button */</span>
+
+<span class="error">$</span><span class="type">joyride-tip-close-color</span>: <span class="constant">#777</span>;
+<span class="error">$</span><span class="type">joyride-tip-close-size</span>: <span class="float">30px</span>;
+<span class="error">$</span><span class="type">joyride-tip-close-weight</span>: <span class="type">normal</span>;
+
+<span class="comment">/* When Joyride is filling the screen, style for the bg */</span>
+
+<span class="error">$</span><span class="type">joyride-screenfill</span>: <span class="color">rgba(0,0,0,0.5)</span>;
+
+
+<span class="comment">/* Keystroke Variables */</span>
+
+
+<span class="comment">/* Text styles. */</span>
+
+<span class="error">$</span><span class="type">keystroke-font</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Consolas</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Menlo</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Courier</span><span class="delimiter">&quot;</span></span>, <span class="type">monospace</span>;
+<span class="error">$</span><span class="type">keystroke-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>);
+<span class="error">$</span><span class="type">keystroke-font-color</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">keystroke-font-color-alt</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">keystroke-function-factor</span>: <span class="float">7%</span>;
+
+<span class="comment">/* Keystroke padding. */</span>
+
+<span class="error">$</span><span class="type">keystroke-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">2px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">4px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">0px</span>);
+
+<span class="comment">/* Background and border styles. */</span>
+
+<span class="error">$</span><span class="type">keystroke-bg</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="error">$</span><span class="type">keystroke-function-factor</span>);
+<span class="error">$</span><span class="type">keystroke-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">keystroke-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">keystroke-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">keystroke-bg</span>, <span class="error">$</span><span class="type">keystroke-function-factor</span>);
+<span class="error">$</span><span class="type">keystroke-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+
+
+<span class="comment">/* Label Variables */</span>
+
+
+<span class="comment">/* Style the labels */</span>
+
+<span class="error">$</span><span class="type">label-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">4px</span>);
+<span class="error">$</span><span class="type">label-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+
+<span class="comment">/* We use these to style the label text */</span>
+
+<span class="error">$</span><span class="type">label-font-sizing</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">label-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">label-font-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">label-font-color-alt</span>: <span class="constant">#fff</span>;
+
+
+<span class="comment">/* Magellan Variables */</span>
+
+
+<span class="comment">/* Basic visual styles */</span>
+
+<span class="error">$</span><span class="type">magellan-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">magellan-padding</span>: <span class="float">10px</span>;
+
+
+<span class="comment">/* Orbit Settings */</span>
+
+
+<span class="comment">/* Caption styles */</span>
+
+<span class="error">$</span><span class="type">orbit-container-bg</span>: <span class="constant">#f5f5f5</span>;
+<span class="error">$</span><span class="type">orbit-caption-bg-old</span>: <span class="color">rgb(0,0,0)</span>;
+<span class="error">$</span><span class="type">orbit-caption-bg</span>: <span class="color">rgba(0,0,0,0.6)</span>;
+<span class="error">$</span><span class="type">orbit-caption-font-color</span>: <span class="constant">#fff</span>;
+
+<span class="comment">/* Left/right nav styles */</span>
+
+<span class="error">$</span><span class="type">orbit-nav-bg-old</span>: <span class="color">rgb(0,0,0)</span>;
+<span class="error">$</span><span class="type">orbit-nav-bg</span>: <span class="color">rgba(0,0,0,0.6)</span>;
+
+<span class="comment">/* Timer styles */</span>
+
+<span class="error">$</span><span class="type">orbit-timer-bg-old</span>: <span class="color">rgb(0,0,0)</span>;
+<span class="error">$</span><span class="type">orbit-timer-bg</span>: <span class="color">rgba(0,0,0,0.6)</span>;
+
+<span class="comment">/* Bullet nav styles */</span>
+
+<span class="error">$</span><span class="type">orbit-bullet-nav-color</span>: <span class="constant">#999</span>;
+<span class="error">$</span><span class="type">orbit-bullet-nav-color-active</span>: <span class="constant">#222</span>;
+
+<span class="comment">/* Slide numbers */</span>
+
+<span class="error">$</span><span class="type">orbit-slide-number-bg</span>: <span class="color">rgba(0,0,0,0)</span>;
+<span class="error">$</span><span class="type">orbit-slide-number-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">orbit-slide-number-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>);
+
+<span class="comment">/* Graceful Loading Wrapper and preloader */</span>
+
+<span class="error">$</span><span class="type">wrapper-class</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">slideshow-wrapper</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">preloader-class</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">preloader</span><span class="delimiter">&quot;</span></span> ;
+
+
+<span class="comment">/* Pagination Variables */</span>
+
+
+<span class="comment">/* Pagination container */</span>
+
+<span class="error">$</span><span class="type">pagination-height</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">24px</span>);
+<span class="error">$</span><span class="type">pagination-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-5px</span>);
+
+<span class="comment">/* List-item properties */</span>
+
+<span class="error">$</span><span class="type">pagination-li-float</span>: <span class="error">$</span><span class="type">default-float</span>;
+<span class="error">$</span><span class="type">pagination-li-height</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">24px</span>);
+<span class="error">$</span><span class="type">pagination-li-font-color</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">pagination-li-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">pagination-li-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>);
+
+<span class="comment">/* Pagination anchor links */</span>
+
+<span class="error">$</span><span class="type">pagination-link-pad</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">1px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">7px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">1px</span>);
+<span class="error">$</span><span class="type">pagination-link-font-color</span>: <span class="constant">#999</span>;
+<span class="error">$</span><span class="type">pagination-link-active-bg</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">10%</span>);
+
+<span class="comment">/* Disabled anchor links */</span>
+
+<span class="error">$</span><span class="type">pagination-link-unavailable-cursor</span>: <span class="error">$</span><span class="type">cursor-default-value</span>;
+<span class="error">$</span><span class="type">pagination-link-unavailable-font-color</span>: <span class="constant">#999</span>;
+<span class="error">$</span><span class="type">pagination-link-unavailable-bg-active</span>: <span class="type">transparent</span>;
+
+<span class="comment">/* Currently selected anchor links */</span>
+
+<span class="error">$</span><span class="type">pagination-link-current-background</span>: <span class="error">$</span><span class="type">primary-color</span>;
+<span class="error">$</span><span class="type">pagination-link-current-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">pagination-link-current-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">pagination-link-current-cursor</span>: <span class="error">$</span><span class="type">cursor-default-value</span>;
+<span class="error">$</span><span class="type">pagination-link-current-active-bg</span>: <span class="error">$</span><span class="type">primary-color</span>;
+
+
+<span class="comment">/* Panel Variables */</span>
+
+
+<span class="comment">/* Background and border styles */</span>
+
+<span class="error">$</span><span class="type">panel-bg</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">5%</span>);
+<span class="error">$</span><span class="type">panel-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">panel-border-size</span>: <span class="float">1px</span>;
+
+<span class="comment">/* Control how much we darken things on hover */</span>
+
+<span class="error">$</span><span class="type">panel-function-factor</span>: <span class="float">10%</span>;
+<span class="error">$</span><span class="type">panel-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">panel-bg</span>, <span class="error">$</span><span class="type">panel-function-factor</span>);
+
+<span class="comment">/* Inner padding and bottom margin */</span>
+
+<span class="error">$</span><span class="type">panel-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">panel-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Font colors */</span>
+
+<span class="error">$</span><span class="type">panel-font-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">panel-font-color-alt</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">panel-header-adjust</span>: <span class="type">true</span>; <span class="comment">/* Set to false to keep default header styles */</span>
+
+<span class="comment">/* Pricing Table Variables */</span>
+
+
+<span class="comment">/* Border color */</span>
+
+<span class="error">$</span><span class="type">price-table-border</span>: <span class="type">solid</span> <span class="float">1px</span> <span class="constant">#ddd</span>;
+
+<span class="comment">/* Bottom margin of the pricing table */</span>
+
+<span class="error">$</span><span class="type">price-table-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Control the title styles */</span>
+
+<span class="error">$</span><span class="type">price-title-bg</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">price-title-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">price-title-align</span>: <span class="type">center</span>;
+<span class="error">$</span><span class="type">price-title-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">price-title-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">price-title-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">16px</span>);
+
+<span class="comment">/* Control the price styles */</span>
+
+<span class="error">$</span><span class="type">price-money-bg</span>: <span class="constant">#eee</span>;
+<span class="error">$</span><span class="type">price-money-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">price-money-align</span>: <span class="type">center</span>;
+<span class="error">$</span><span class="type">price-money-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">price-money-weight</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">price-money-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Description styles */</span>
+
+<span class="error">$</span><span class="type">price-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">price-desc-color</span>: <span class="constant">#777</span>;
+<span class="error">$</span><span class="type">price-desc-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>);
+<span class="error">$</span><span class="type">price-desc-align</span>: <span class="type">center</span>;
+<span class="error">$</span><span class="type">price-desc-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+<span class="error">$</span><span class="type">price-desc-weight</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">price-desc-line-height</span>: <span class="float">1</span><span class="class">.4</span>;
+<span class="error">$</span><span class="type">price-desc-bottom-border</span>: <span class="type">dotted</span> <span class="float">1px</span> <span class="constant">#ddd</span>;
+
+<span class="comment">/* List item styles */</span>
+
+<span class="error">$</span><span class="type">price-item-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">price-item-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>);
+<span class="error">$</span><span class="type">price-item-align</span>: <span class="type">center</span>;
+<span class="error">$</span><span class="type">price-item-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">price-item-weight</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">price-item-bottom-border</span>: <span class="type">dotted</span> <span class="float">1px</span> <span class="constant">#ddd</span>;
+
+<span class="comment">/* CTA area styles */</span>
+
+<span class="error">$</span><span class="type">price-cta-bg</span>: <span class="constant">#f5f5f5</span>;
+<span class="error">$</span><span class="type">price-cta-align</span>: <span class="type">center</span>;
+<span class="error">$</span><span class="type">price-cta-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>) <span class="float">0</span>;
+
+
+<span class="comment">/* Progress Bar Variables */</span>
+
+
+<span class="comment">/* Progress bar height */</span>
+
+<span class="error">$</span><span class="type">progress-bar-height</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">25px</span>);
+<span class="error">$</span><span class="type">progress-bar-color</span>: <span class="type">transparent</span>;
+
+<span class="comment">/* Border styles */</span>
+
+<span class="error">$</span><span class="type">progress-bar-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">progress-bar-border-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">progress-bar-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">progress-bar-border-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+
+<span class="comment">/* Margin &amp; padding */</span>
+
+<span class="error">$</span><span class="type">progress-bar-pad</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">2px</span>);
+<span class="error">$</span><span class="type">progress-bar-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+
+<span class="comment">/* Meter colors */</span>
+
+<span class="error">$</span><span class="type">progress-meter-color</span>: <span class="error">$</span><span class="type">primary-color</span>;
+<span class="error">$</span><span class="type">progress-meter-secondary-color</span>: <span class="error">$</span><span class="type">secondary-color</span>;
+<span class="error">$</span><span class="type">progress-meter-success-color</span>: <span class="error">$</span><span class="type">success-color</span>;
+<span class="error">$</span><span class="type">progress-meter-alert-color</span>: <span class="error">$</span><span class="type">alert-color</span>;
+
+
+<span class="comment">/* Reveal Variables */</span>
+
+
+<span class="comment">/* Reveal overlay. */</span>
+
+<span class="error">$</span><span class="type">reveal-overlay-bg</span>: <span class="color">rgba(#000, .45)</span>;
+<span class="error">$</span><span class="type">reveal-overlay-bg-old</span>: <span class="constant">#000</span>;
+
+<span class="comment">/* Modal itself. */</span>
+
+<span class="error">$</span><span class="type">reveal-modal-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">reveal-position-top</span>: <span class="float">50px</span>;
+<span class="error">$</span><span class="type">reveal-default-width</span>: <span class="float">80%</span>;
+<span class="error">$</span><span class="type">reveal-modal-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">reveal-box-shadow</span>: <span class="float">0</span> <span class="float">0</span> <span class="float">10px</span> <span class="color">rgba(#000,.4)</span>;
+
+<span class="comment">/* Reveal close button */</span>
+
+<span class="error">$</span><span class="type">reveal-close-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">22px</span>);
+<span class="error">$</span><span class="type">reveal-close-top</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">8px</span>);
+<span class="error">$</span><span class="type">reveal-close-side</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">11px</span>);
+<span class="error">$</span><span class="type">reveal-close-color</span>: <span class="constant">#aaa</span>;
+<span class="error">$</span><span class="type">reveal-close-weight</span>: <span class="type">bold</span>;
+
+<span class="comment">/* Modal border */</span>
+
+<span class="error">$</span><span class="type">reveal-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">reveal-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">reveal-border-color</span>: <span class="constant">#666</span>;
+
+<span class="error">$</span><span class="type">reveal-modal-class</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">reveal-modal</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">close-reveal-modal-class</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">close-reveal-modal</span><span class="delimiter">&quot;</span></span>;
+
+
+<span class="comment">/* Section Variables */</span>
+
+
+<span class="comment">/* Padding and hover factor */</span>
+
+<span class="error">$</span><span class="type">section-title-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>);
+<span class="error">$</span><span class="type">section-content-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>);
+<span class="error">$</span><span class="type">section-function-factor</span>: <span class="float">10%</span>;
+
+<span class="comment">/* Titles */</span>
+
+<span class="error">$</span><span class="type">section-title-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">section-title-bg</span>: <span class="constant">#efefef</span>;
+<span class="error">$</span><span class="type">section-title-bg-active</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">section-title-bg</span>, <span class="error">$</span><span class="type">section-function-factor</span>);
+<span class="error">$</span><span class="type">section-title-bg-active-tabs</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">section-title-bg-hover</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">section-title-bg</span>, <span class="error">$</span><span class="type">section-function-factor</span>/<span class="float">2</span>);
+
+<span class="comment">/* Border size */</span>
+
+<span class="error">$</span><span class="type">section-border-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">section-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">section-border-color</span>: <span class="constant">#ccc</span>;
+
+<span class="comment">/* Font controls */</span>
+
+<span class="error">$</span><span class="type">section-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+
+<span class="comment">/* Control the color of the background and some size options */</span>
+
+<span class="error">$</span><span class="type">section-content-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">section-vertical-nav-min-width</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">200px</span>);
+<span class="error">$</span><span class="type">section-vertical-tabs-title-width</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">200px</span>);
+<span class="error">$</span><span class="type">section-bottom-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="error">$</span><span class="type">title-selector</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">.title</span><span class="delimiter">&quot;</span></span>;
+<span class="error">$</span><span class="type">content-selector</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">.content</span><span class="delimiter">&quot;</span></span>;
+
+
+<span class="comment">/* Side Nav Variables */</span>
+
+
+<span class="comment">/* Padding */</span>
+
+<span class="error">$</span><span class="type">side-nav-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>) <span class="float">0</span>;
+
+<span class="comment">/* List styles */</span>
+
+<span class="error">$</span><span class="type">side-nav-list-type</span>: <span class="type">none</span>;
+<span class="error">$</span><span class="type">side-nav-list-position</span>: <span class="type">inside</span>;
+<span class="error">$</span><span class="type">side-nav-list-margin</span>: <span class="float">0</span> <span class="float">0</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">7px</span>) <span class="float">0</span>;
+
+<span class="comment">/* Link styles */</span>
+
+<span class="error">$</span><span class="type">side-nav-link-color</span>: <span class="error">$</span><span class="type">primary-color</span>;
+<span class="error">$</span><span class="type">side-nav-link-color-active</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#000</span>, <span class="float">30%</span>);
+<span class="error">$</span><span class="type">side-nav-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">side-nav-font-weight</span>: <span class="type">bold</span>;
+
+<span class="comment">/* Border styles */</span>
+
+<span class="error">$</span><span class="type">side-nav-divider-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">side-nav-divider-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">side-nav-divider-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">10%</span>);
+
+
+<span class="comment">/* Sub Nav Variables */</span>
+
+
+<span class="comment">/* Margin and padding */</span>
+
+<span class="error">$</span><span class="type">sub-nav-list-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-4px</span>) <span class="float">0</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">18px</span>);
+<span class="error">$</span><span class="type">sub-nav-list-padding-top</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">4px</span>);
+
+<span class="comment">/* Definition */</span>
+
+<span class="error">$</span><span class="type">sub-nav-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">sub-nav-font-color</span>: <span class="constant">#999</span>;
+<span class="error">$</span><span class="type">sub-nav-font-weight</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">sub-nav-text-decoration</span>: <span class="type">none</span>;
+<span class="error">$</span><span class="type">sub-nav-border-radius</span>: <span class="float">1000px</span>;
+
+<span class="comment">/* Active item styles */</span>
+
+<span class="error">$</span><span class="type">sub-nav-active-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">sub-nav-active-bg</span>: <span class="error">$</span><span class="type">primary-color</span>;
+<span class="error">$</span><span class="type">sub-nav-active-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">sub-nav-active-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">9px</span>);
+<span class="error">$</span><span class="type">sub-nav-active-cursor</span>: <span class="error">$</span><span class="type">cursor-default-value</span>;
+
+
+<span class="comment">/* Switch Variables */</span>
+
+
+<span class="comment">/* Border styles and background colors for the switch container */</span>
+
+<span class="error">$</span><span class="type">switch-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">switch-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">switch-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">switch-bg</span>: <span class="constant">#fff</span>;
+
+<span class="comment">/* Switch heights for our default classes */</span>
+
+<span class="error">$</span><span class="type">switch-height-tny</span>: <span class="float">22px</span>;
+<span class="error">$</span><span class="type">switch-height-sml</span>: <span class="float">28px</span>;
+<span class="error">$</span><span class="type">switch-height-med</span>: <span class="float">36px</span>;
+<span class="error">$</span><span class="type">switch-height-lrg</span>: <span class="float">44px</span>;
+<span class="error">$</span><span class="type">switch-bottom-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+<span class="comment">/* Font sizes for our classes. */</span>
+
+<span class="error">$</span><span class="type">switch-font-size-tny</span>: <span class="float">11px</span>;
+<span class="error">$</span><span class="type">switch-font-size-sml</span>: <span class="float">12px</span>;
+<span class="error">$</span><span class="type">switch-font-size-med</span>: <span class="float">14px</span>;
+<span class="error">$</span><span class="type">switch-font-size-lrg</span>: <span class="float">17px</span>;
+<span class="error">$</span><span class="type">switch-label-side-padding</span>: <span class="float">6px</span>;
+
+<span class="comment">/* Switch-paddle */</span>
+
+<span class="error">$</span><span class="type">switch-paddle-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">switch-paddle-fade-to-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">switch-paddle-bg</span>, <span class="float">10%</span>);
+<span class="error">$</span><span class="type">switch-paddle-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">switch-paddle-bg</span>, <span class="float">35%</span>);
+<span class="error">$</span><span class="type">switch-paddle-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">switch-paddle-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">switch-paddle-transition-speed</span>: <span class="class">.1s</span>;
+<span class="error">$</span><span class="type">switch-paddle-transition-ease</span>: <span class="type">ease-out</span>;
+<span class="error">$</span><span class="type">switch-positive-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">success-color</span>, <span class="float">50%</span>);
+<span class="error">$</span><span class="type">switch-negative-color</span>: <span class="constant">#f5f5f5</span>;
+
+<span class="comment">/* Outline Style for tabbing through switches */</span>
+
+<span class="error">$</span><span class="type">switch-label-outline</span>: <span class="float">1px</span> <span class="type">dotted</span> <span class="constant">#888</span>;
+
+
+<span class="comment">/* Table Variables */</span>
+
+<span class="comment">/* Background color for the table and even rows */</span>
+
+<span class="error">$</span><span class="type">table-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">table-even-row-bg</span>: <span class="constant">#f9f9f9</span>;
+
+<span class="comment">/* Table cell border style */</span>
+
+<span class="error">$</span><span class="type">table-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">table-border-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">table-border-color</span>: <span class="constant">#ddd</span>;
+
+<span class="comment">/* Table head styles */</span>
+
+<span class="error">$</span><span class="type">table-head-bg</span>: <span class="constant">#f5f5f5</span>;
+<span class="error">$</span><span class="type">table-head-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">table-head-font-color</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">table-head-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">table-head-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">8px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+
+<span class="comment">/* Row padding and font styles */</span>
+
+<span class="error">$</span><span class="type">table-row-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">9px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+<span class="error">$</span><span class="type">table-row-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">table-row-font-color</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">table-line-height</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">18px</span>);
+
+<span class="comment">/* Display and margin of tables */</span>
+
+<span class="error">$</span><span class="type">table-display</span>: <span class="type">table-cell</span>;
+<span class="error">$</span><span class="type">table-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+
+
+<span class="comment">/* Image Thumbnail Variables */</span>
+
+
+<span class="comment">/* Border styles */</span>
+
+<span class="error">$</span><span class="type">thumb-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">thumb-border-width</span>: <span class="float">4px</span>;
+<span class="error">$</span><span class="type">thumb-border-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">thumb-box-shadow</span>: <span class="float">0</span> <span class="float">0</span> <span class="float">0</span> <span class="float">1px</span> <span class="color">rgba(#000,.2)</span>;
+<span class="error">$</span><span class="type">thumb-box-shadow-hover</span>: <span class="float">0</span> <span class="float">0</span> <span class="float">6px</span> <span class="float">1px</span> <span class="color">rgba($primary-color,0.5)</span>;
+
+<span class="comment">/* Radius and transition speed for thumbs */</span>
+
+<span class="error">$</span><span class="type">thumb-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+<span class="error">$</span><span class="type">thumb-transition-speed</span>: <span class="float">200</span><span class="type">ms</span>;
+
+
+<span class="comment">/* Tooltip Variables */</span>
+
+
+<span class="error">$</span><span class="type">has-tip-border-bottom</span>: <span class="type">dotted</span> <span class="float">1px</span> <span class="constant">#ccc</span>;
+<span class="error">$</span><span class="type">has-tip-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">has-tip-font-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">has-tip-border-bottom-hover</span>: <span class="type">dotted</span> <span class="float">1px</span> <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">primary-color</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">has-tip-font-color-hover</span>: <span class="error">$</span><span class="type">primary-color</span>;
+<span class="error">$</span><span class="type">has-tip-cursor-type</span>: <span class="type">help</span>;
+
+<span class="error">$</span><span class="type">tooltip-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">8px</span>);
+<span class="error">$</span><span class="type">tooltip-bg</span>: <span class="constant">#000</span>;
+<span class="error">$</span><span class="type">tooltip-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">15px</span>);
+<span class="error">$</span><span class="type">tooltip-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">tooltip-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">tooltip-line-height</span>: <span class="float">1</span><span class="class">.3</span>;
+<span class="error">$</span><span class="type">tooltip-close-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+<span class="error">$</span><span class="type">tooltip-close-font-weight</span>: <span class="type">normal</span>;
+<span class="error">$</span><span class="type">tooltip-close-font-color</span>: <span class="constant">#888</span>;
+<span class="error">$</span><span class="type">tooltip-font-size-sml</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">tooltip-radius</span>: <span class="error">$</span><span class="type">global-radius</span>;
+<span class="error">$</span><span class="type">tooltip-pip-size</span>: <span class="float">5px</span>;
+
+
+<span class="comment">/* Top Bar Variables */</span>
+
+
+<span class="comment">/* Background color for the top bar */</span>
+
+<span class="error">$</span><span class="type">topbar-bg</span>: <span class="constant">#111</span> <span class="error">!</span><span class="type">default</span>;
+
+<span class="comment">/* Height and margin */</span>
+
+<span class="error">$</span><span class="type">topbar-height</span>: <span class="float">45px</span>;
+<span class="error">$</span><span class="type">topbar-margin-bottom</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">30px</span>);
+
+<span class="comment">/* Control Input height for top bar */</span>
+
+<span class="error">$</span><span class="type">topbar-input-height</span>: <span class="float">2.45em</span>;
+
+<span class="comment">/* Controlling the styles for the title in the top bar */</span>
+
+<span class="error">$</span><span class="type">topbar-title-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">topbar-title-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">17px</span>);
+
+<span class="comment">/* Style the top bar dropdown elements */</span>
+
+<span class="error">$</span><span class="type">topbar-dropdown-bg</span>: <span class="constant">#222</span>;
+<span class="error">$</span><span class="type">topbar-dropdown-link-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">topbar-dropdown-link-bg</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">topbar-bg</span>, <span class="float">5%</span>);
+<span class="error">$</span><span class="type">topbar-dropdown-toggle-size</span>: <span class="float">5px</span>;
+<span class="error">$</span><span class="type">topbar-dropdown-toggle-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">topbar-dropdown-toggle-alpha</span>: <span class="float">0</span><span class="class">.5</span>;
+
+<span class="comment">/* Set the link colors and styles for top-level nav */</span>
+
+<span class="error">$</span><span class="type">topbar-link-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">topbar-link-color-hover</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">topbar-link-color-active</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">topbar-link-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">topbar-link-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">13px</span>);
+<span class="error">$</span><span class="type">topbar-link-hover-lightness</span>: <span class="float">-30%</span>; <span class="type">Darken</span> <span class="type">by</span> <span class="float">30%</span>
+<span class="error">$</span><span class="type">topbar-link-bg-hover</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">topbar-bg</span>, <span class="float">3%</span>);
+<span class="error">$</span><span class="type">topbar-link-bg-active</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">topbar-bg</span>, <span class="float">3%</span>);
+
+<span class="error">$</span><span class="type">topbar-dropdown-label-color</span>: <span class="constant">#555</span>;
+<span class="error">$</span><span class="type">topbar-dropdown-label-text-transform</span>: <span class="type">uppercase</span>;
+<span class="error">$</span><span class="type">topbar-dropdown-label-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">topbar-dropdown-label-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">10px</span>);
+
+<span class="comment">/* Top menu icon styles */</span>
+
+<span class="error">$</span><span class="type">topbar-menu-link-transform</span>: <span class="type">uppercase</span>;
+<span class="error">$</span><span class="type">topbar-menu-link-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">13px</span>);
+<span class="error">$</span><span class="type">topbar-menu-link-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">topbar-menu-link-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">topbar-menu-icon-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">topbar-menu-link-color-toggled</span>: <span class="constant">#888</span>;
+<span class="error">$</span><span class="type">topbar-menu-icon-color-toggled</span>: <span class="constant">#888</span>;
+
+<span class="comment">/* Transitions and breakpoint styles */</span>
+
+<span class="error">$</span><span class="type">topbar-transition-speed</span>: <span class="float">300</span><span class="type">ms</span>;
+<span class="error">$</span><span class="type">topbar-breakpoint</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">940px</span>);
+<span class="error">$</span><span class="type">topbar-media-query</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">only screen and (min-width: #{$topbar-breakpoint})</span><span class="delimiter">&quot;</span></span>;
+
+<span class="comment">/* Divider Styles */</span>
+
+<span class="error">$</span><span class="type">topbar-divider-border-bottom</span>: <span class="type">solid</span> <span class="float">1px</span> <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">topbar-bg</span>, <span class="float">10%</span>);
+<span class="error">$</span><span class="type">topbar-divider-border-top</span>: <span class="type">solid</span> <span class="float">1px</span> <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="error">$</span><span class="type">topbar-bg</span>, <span class="float">10%</span>);
+
+<span class="comment">/* Sticky Class */</span>
+
+<span class="error">$</span><span class="type">topbar-sticky-class</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">.sticky</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+
+  </div>
+
+  <div class="large-3 pull-9 columns">
+    <div class="docs section-container accordion" data-section data-options="one_up: false">
+  <section class="section active">
+    <p class="title"><a href="#">Using Foundation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="index.html">Get Started</a></li>
+        <li><a class="" href="javascript.html">Javascript</a></li>
+        <li><a class="active" href="sass.html">Sass</a></li>
+        <li><a class="" href="rails.html">Rails</a></li>
+        <li><a class="" href="media-queries.html">Media Queries</a></li>
+        <li><a href="components/visibility.html">Visibility Classes</a></li>
+        <li><a class="" href="rtl.html">Right-to-Left Support</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <p class="title"><a href="#">Grid</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="components/grid.html">Grid</a></li>
+        <li><a href="components/block-grid.html">Block Grid</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <p class="title"><a href="#">Navigation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="components/pagination.html">Pagination</a></li>
+        <li><a href="components/side-nav.html">Side Nav</a></li>
+        <li><a href="components/sub-nav.html">Sub Nav</a></li>
+        <li><a href="components/top-bar.html">Top Bar</a></li>
+        <li><a href="components/breadcrumbs.html">Breadcrumbs</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <p class="title"><a href="#">Buttons</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="components/buttons.html">Buttons</a></li>
+        <li><a href="components/button-groups.html">Button Groups</a></li>
+        <li><a href="components/dropdown-buttons.html">Dropdown Buttons</a></li>
+        <li><a href="components/split-buttons.html">Split Buttons</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <p class="title"><a href="#">Forms</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="components/forms.html">Forms</a></li>
+        <li><a href="components/custom-forms.html">Custom Forms</a></li>
+        <li><a href="components/switch.html">Switch</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <p class="title"><a href="#">Typography</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="components/type.html">Type</a></li>
+        <li><a href="components/inline-lists.html">Inline Lists</a></li>
+        <li><a href="components/labels.html">Labels</a></li>
+        <li><a href="components/keystrokes.html">Keystrokes</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <p class="title"><a href="#">CSS Components</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="components/global.html">Global Styles</a></li>
+        <li><a href="components/alert-boxes.html">Alert Boxes</a></li>
+        <li><a href="components/panels.html">Panels</a></li>
+        <li><a href="components/pricing-tables.html">Pricing Tables</a></li>
+        <li><a href="components/progress-bars.html">Progress Bars</a></li>
+        <li><a href="components/tables.html">Tables</a></li>
+        <li><a href="components/thumbnails.html">Thumbnails</a></li>
+        <li><a href="components/flex-video.html">Flex Video</a></li>
+        <li class="divider"></li>
+        <li><a target="_blank" style="font-style: italic" href="components/kitchen-sink.html">Kitchen Sink</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <p class="title"><a href="#">Javascript</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="components/clearing.html">Clearing</a></li>
+        <li><a href="components/dropdown.html">Dropdown</a></li>
+        <li><a href="components/interchange.html">Interchange</a></li>
+        <li><a href="components/joyride.html">Joyride</a></li>
+        <li><a href="components/magellan.html">Magellan</a></li>
+        <li><a href="components/orbit.html">Orbit</a></li>
+        <li><a href="components/reveal.html">Reveal</a></li>
+        <li><a href="components/section.html">Section</a></li>
+        <li><a href="components/tooltips.html">Tooltips</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="faq.html">FAQ</a></p>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="support.html">Support</a></p>
+  </section>
+</div>
+
+<p><a href="http://foundation.zurb.com/download.php" class="button expand" style="margin-bottom: 0;">Download Foundation 4</a></p>
+
+<div class="jobs hide-for-small">
+  <h5>Awesome product jobs:</h5>
+  <div id="zurbJobsWidget"></div>
+  <a id="via" href="http://zurbjobs.com">via&nbsp;<span class="jobs-link">ZURBjobs</span></a>
+</div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <footer class="row full-width">
+      <div class="large-5 columns">
+        <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://foundation.zurb.com/about.php">Foundation Info and Goodies &rarr;</a></p>
+      </div>
+
+      <div class="large-3 columns">
+        <h6><strong>Using Foundation?</strong></h6>
+        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+      </div>
+
+      <div class="large-4 columns">
+        <h6><strong>Need some help?</strong></h6>
+        <p>For answers or help visit the <a href="http://foundation.zurb.com/docs/support.html">Support page</a>.</p>
+      </div>
+    </footer>
+
+    <div id="copyright">
+      <div class="row full-width">
+        <div class="large-4 columns">
+          <p>Site content &copy; 2013 ZURB, inc.</p>
+        </div>
+        <div class="large-8 columns">
+          <ul class="inline-list right">
+            <li><a href="http://foundation.zurb.com">Home</a></li>
+            <li><a href="http://foundation.zurb.com/download.php">Download</a></li>
+            <li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+            <li><a href="http://foundation.zurb.com/docs/changelog.html">Changelog</a></li>
+            <li><a href="http://foundation.zurb.com/about.php">About</a></li>
+            <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Google Analytics
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      document.write('<script src="http://hiromi:4001/assets/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js"><\/script>');
+    </script>
+    <script src="http://hiromi:4001/assets/docs.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+      
+
+      $.ajax({
+        url: '//zurb.com/jobs/widgets/jobs.json?limit=3',
+        dataType: 'jsonp',
+        success: function(data) {
+          var list = $("<ul></ul>");
+          $.each(data.jobs, function(idx, job) {
+            var item = "<li><a href='"+job.url+"' target='_blank'>" +
+              "<span class='positionTitle'>"+job.title+"</span>" +
+              "<span class='location'><span class='companyName'>"+job.company_name+"</span> in "+job.location+"</span>" +
+              "</a>" +
+              "</li>";
+            list.append(item);
+          });
+            // Customize This
+          $("#zurbJobsWidget").html(list);
+        }
+      });
+
+      // For Kitchen Sink Page
+      $('#start-jr').on('click', function() {
+        $(document).foundation('joyride','start');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,511 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicons/apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicons/apple-touch-icon-114x114-precomposed.png">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicons/apple-touch-icon-72x72-precomposed.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <title>Foundation Docs: Split Buttons</title>
+    <link rel="stylesheet" href="http://hiromi:4001/assets/normalize.css" />
+    <link rel="stylesheet" href="http://hiromi:4001/assets/docs.css" />
+    <script src="http://hiromi:4001/assets/vendor/custom.modernizr.js"></script>
+  </head>
+  <body class="antialiased">
+
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">Foundation</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="/grid.php">Features</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates.php">Add-ons</a></li>
+          <li class="divider"></li>
+          <li><a href="/case-jacquelinewest.php">Case Studies</a></li>
+          <li class="divider"></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li class="divider"></li>
+          <li><a href="/training.php">Training</a></li>
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="http://foundation.zurb.com/docs" class="button">Getting Started</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 class="docs header"><a href="http://foundation.zurb.com/docs/">Foundation 4 Documentation</a></h1>
+        <h6 class="docs subheader"><a href="http://foundation.zurb.com/old-docs/f3">Want F3 Docs?</a></h6>
+        <hr>
+      </div>
+    </div>
+
+    
+<div class="row">
+  <div class="large-9 push-3 columns">
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Split Buttons</h2>
+        <h4 class="subheader">We've simplified our split buttons by getting rid of the dedicated dropdown associated with them. Instead, you'll use our <a href="#">new dropdown plugin</a> to attach a dropdown to the button style of your choice.</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+
+        <a href="#" class="tiny button split">Split Button <span data-dropdown="drop"></span></a><br>
+        <a href="#" class="small secondary radius button split">Split Button <span data-dropdown="drop2"></span></a><br>
+        <a href="#" class="button alert round split">Split Button <span data-dropdown="drop3"></span></a><br>
+        <a href="#" class="large success button split">Split Button <span data-dropdown="drop4"></span></a><br>
+
+        <hr>
+
+        <h3>Build With Predefined HTML Classes</h3>
+        <p>There are two ways to build buttons in Foundation 4: with our predefined HTML classes or our structure and mixins. Building buttons using our predefined classes is simple, you'll need an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;input&gt;</code> with a class of <code>.button.split</code>. This will create a default medium button. You can also use size, color and radius classes to control more of the style.</p>
+
+        <p>The classes options:</p>
+        <ul class="disc">
+          <li>The size classes include: <code>.tiny, .small, .medium</code> or <code>.large</code></li>
+          <li>The color classes include: <code>.secondary, .alert</code> or <code>.success</code></li>
+          <li>The radius classes include: <code>.radius</code> or <code>.round</code>.</li>
+        </ul>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">&lt;!-- Size Classes --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button split</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Default Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">tiny button split</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Tiny Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small button split</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Small Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large button split</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Large Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Color Classes --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button split secondary</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Secondary Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button split success</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Success Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button split alert</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Alert Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Radius Classes --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button split radius</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Radius Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button split round</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Round Button <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <p>You may chain one class from each group to build up desired default styles. For these styles to take effect, make sure you have the <strong>default Foundation CSS package</strong> or that you've selected <strong>split buttons from a custom package</strong>. These should be linked up following our default <a href="#getting-started">HTML page structure</a>.</p>
+
+        <hr>
+
+        <h3>Build with Mixins</h3>
+        <p>We've included SCSS mixins used to style buttons. To use these mixins, you'll need to have the <a href="#extention-install">extension installed</a> or grab <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/_variables.scss">_variables.scss</a>, <a href="#https://github.com/zurb/foundation/blob/master/scss/foundation/components/_buttons.scss">_buttons.scss</a>, <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_global.scss">_global.scss</a> and <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_split-buttons.scss">_split-buttons.scss</a> from Github and throw them into a Foundation folder in your project directory. From there, you can import the files at the top of your own SCSS stylesheet, like so:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/variables</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/global</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/buttons</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/split-buttons</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+        <p>If you are using the mixins, you may include the styles on whatever class or ID you'd like, just make sure you follow our markup structure:</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">your-class-name</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Split Button Text <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <h5>Quick Mixin</h5>
+        <p>You can quickly build an entire split buttons using our global mixin by including it on your custom class or ID in your stylesheet. The global mixin will create the necessary style for the button. The global mixin looks like this:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Using the default styles */</span>
+<span class="class">.your-class-name</span> {
+  <span class="directive">@include</span> <span class="key">button</span>;
+  <span class="directive">@include</span> <span class="key">split-button</span>;
+}
+</pre></div>
+</div>
+</div>
+
+        <a href="" class="split button">Default Split Button<span data-dropdown="drop5"></span></a>
+
+        <p>There are also <strong>four options</strong> you can customize on the fly when writing this mixin. These control things like: padding size, pip color, border color and base styles. Setting any of these options to <strong>false</strong> will not include the styles.</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* Using the available options */</span>
+<span class="class">.your-class-name</span> {
+  <span class="directive">@include</span> <span class="key">button</span>;
+  <span class="directive">@include</span> <span class="error">s</span><span class="error">p</span><span class="error">l</span><span class="error">i</span><span class="error">t</span><span class="error">-</span><span class="error">b</span><span class="error">u</span><span class="error">t</span><span class="error">t</span><span class="error">o</span><span class="error">n</span>(<span class="error">$</span><span class="key">padding</span>, <span class="error">$</span><span class="key">pip-color</span>, <span class="error">$</span><span class="key">span-border</span>, <span class="error">$</span><span class="key">base-style</span>);
+}
+
+<span class="comment">/* This controls padding around the dropdown buttons. Use tiny, small, medium, or large */</span>
+<span class="error">$</span><span class="type">padding</span>: <span class="error">$</span><span class="type">button-med</span>
+
+<span class="comment">/* This controls the dropdown pip color. Set to one of our variables or a custom hex value */</span>
+<span class="error">$</span><span class="type">pip-color</span>: <span class="error">$</span><span class="type">split-button-pip-color</span>
+
+<span class="comment">/* This controls the border color of the triangle span area. This can be a variable or color value. */</span>
+<span class="error">$</span><span class="type">span-border</span>: <span class="error">$</span><span class="type">primary-color</span>
+
+<span class="comment">/* This controls whether or not base styles come through. Set to false to negate */</span>
+<span class="comment">/* Handy when you want to have many different styles */</span>
+<span class="error">$</span><span class="type">base-style</span>: <span class="type">true</span>
+</pre></div>
+</div>
+</div>
+
+        <h5>Default SCSS Variables</h5>
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* We use these to control different shared styles for Split Buttons */</span>
+<span class="error">$</span><span class="type">split-button-function-factor</span>: <span class="float">15%</span>;
+<span class="error">$</span><span class="type">split-button-pip-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">split-button-pip-color-alt</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">split-button-active-bg-tint</span>: <span class="color">rgba(0,0,0,0.1)</span>;
+
+<span class="comment">/* We use these to control tiny split buttons */</span>
+<span class="error">$</span><span class="type">split-button-padding-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">9</span>;
+<span class="error">$</span><span class="type">split-button-span-width-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">6</span><span class="class">.5</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-tny</span>: <span class="error">$</span><span class="type">button-tny</span>;
+<span class="error">$</span><span class="type">split-button-pip-top-tny</span>: <span class="error">$</span><span class="type">button-tny</span> <span class="type">*</span> <span class="float">2</span>;
+<span class="error">$</span><span class="type">split-button-pip-left-tny</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-5px</span>);
+
+<span class="comment">/* We use these to control small split buttons */</span>
+<span class="error">$</span><span class="type">split-button-padding-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">7</span>;
+<span class="error">$</span><span class="type">split-button-span-width-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">5</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-sml</span>: <span class="error">$</span><span class="type">button-sml</span>;
+<span class="error">$</span><span class="type">split-button-pip-top-sml</span>: <span class="error">$</span><span class="type">button-sml</span> <span class="type">*</span> <span class="float">1</span><span class="class">.5</span>;
+<span class="error">$</span><span class="type">split-button-pip-left-sml</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-9px</span>);
+
+<span class="comment">/* We use these to control medium split buttons */</span>
+<span class="error">$</span><span class="type">split-button-padding-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">6</span><span class="class">.4</span>;
+<span class="error">$</span><span class="type">split-button-span-width-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">4</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+<span class="error">$</span><span class="type">split-button-pip-top-med</span>: <span class="error">$</span><span class="type">button-med</span> <span class="type">*</span> <span class="float">1</span><span class="class">.5</span>;
+<span class="error">$</span><span class="type">split-button-pip-left-med</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-9px</span>);
+
+<span class="comment">/* We use these to control large split buttons */</span>
+<span class="error">$</span><span class="type">split-button-padding-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="type">*</span> <span class="float">6</span>;
+<span class="error">$</span><span class="type">split-button-span-width-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="type">*</span> <span class="float">3</span><span class="class">.75</span>;
+<span class="error">$</span><span class="type">split-button-pip-size-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">6px</span>);
+<span class="error">$</span><span class="type">split-button-pip-top-lrg</span>: <span class="error">$</span><span class="type">button-lrg</span> + <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>);
+<span class="error">$</span><span class="type">split-button-pip-left-lrg</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">-9px</span>);
+</pre></div>
+</div>
+</div>
+
+        <p><strong>Note:</strong> <code>emCalc();</code> is a function we wrote to convert <code>px</code> to <code>em</code>. It is included in <strong>_variables.scss</strong>.</p>
+
+        <hr>
+
+        <h3>Using the JavaScript</h3>
+        <p>You don't need this JS to create dropdown button styles with Foundation. The only reason you'll need to include <code>foundation.dropdown.js</code> is if you want to add one of our dropdowns to the button. You'll also need to make sure to include <code>zepto.js</code> and <code>foundation.js</code> above the dropdown plugin.</p>
+        <p>Above your closing <code>&lt;/body&gt;</code> tag include the following line of code and make sure you have the JS file in your directory:</p>
+
+        <p><a href="../javascript.html" title="How to install Foundation JavaScript">Read how to install Foundation JavaScript</a></p>
+
+        <p>Required Foundation Library: <code>foundation.dropdown.js</code></p>
+
+        <h5>Creating the Dropdown</h5>
+        <p>To create a dropdown, you'll need to attach a data-attribute to whatever element you want the dropdown attached to (in this case a button). From there, you'll create a list that holds the links or content and add another data-attribute that associates with the element it belongs to. Here's an example of that markup:</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-dropdown</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">drop1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button dropdown</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Dropdown Button <span class="tag">&lt;span</span> <span class="attribute-name">data-dropdown</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">drop1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;br&gt;</span>
+
+<span class="tag">&lt;ul</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">drop1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">f-dropdown</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-dropdown-content</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>This is a link<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>This is another<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Yet another<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <a href="#" class="button split">Dropdown Button <span data-dropdown="drop1"></span></a><br>
+
+        <p>You'll notice that <code>data-dropdown="drop1"</code> and <code>id="drop1"</code> have similar values. This is what tells the dropdown plugin where to look to find the position to attach the dropdown element to.</p>
+
+        <h5>Optional JavaScript Configuration</h5>
+
+        <p>Dropdown button options can only be passed in during initialization at this time.</p>
+
+<div class='json'><div class="CodeRay">
+  <div class="code"><pre>
+{
+  <span class="error">/</span><span class="error">/</span> <span class="error">s</span><span class="error">p</span><span class="error">e</span><span class="error">c</span><span class="error">i</span><span class="error">f</span><span class="error">y</span> <span class="error">t</span><span class="error">h</span><span class="error">e</span> <span class="error">c</span><span class="error">l</span><span class="error">a</span><span class="error">s</span><span class="error">s</span> <span class="error">u</span><span class="error">s</span><span class="error">e</span><span class="error">d</span> <span class="error">f</span><span class="error">o</span><span class="error">r</span> <span class="error">a</span><span class="error">c</span><span class="error">t</span><span class="error">i</span><span class="error">v</span><span class="error">e</span> <span class="error">s</span><span class="error">e</span><span class="error">c</span><span class="error">t</span><span class="error">i</span><span class="error">o</span><span class="error">n</span><span class="error">s</span>
+  <span class="error">a</span><span class="error">c</span><span class="error">t</span><span class="error">i</span><span class="error">v</span><span class="error">e</span><span class="error">C</span><span class="error">l</span><span class="error">a</span><span class="error">s</span><span class="error">s</span>: <span class="error">'</span><span class="error">o</span><span class="error">p</span><span class="error">e</span><span class="error">n</span><span class="error">'</span>
+}</pre></div>
+</div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="large-3 pull-9 columns">
+    <div class="docs section-container accordion" data-section data-options="one_up: false">
+  <section class="section ">
+    <p class="title"><a href="#">Using Foundation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="../">Get Started</a></li>
+        <li><a href="../javascript.html">Javascript</a></li>
+        <li><a href="../sass.html">Sass</a></li>
+        <li><a href="../rails.html">Rails</a></li>
+        <li><a href="../media-queries.html">Media Queries</a></li>
+        <li><a class="" href="visibility.html">Visibility Classes</a></li>
+        <li><a href="../rtl.html">Right-to-Left Support</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Grid</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="grid.html">Grid</a></li>
+        <li><a class="" href="block-grid.html">Block Grid</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Navigation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="pagination.html">Pagination</a></li>
+        <li><a class="" href="side-nav.html">Side Nav</a></li>
+        <li><a class="" href="sub-nav.html">Sub Nav</a></li>
+        <li><a class="" href="top-bar.html">Top Bar</a></li>
+        <li><a class="" href="breadcrumbs.html">Breadcrumbs</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section active">
+    <p class="title"><a href="#">Buttons</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="buttons.html">Buttons</a></li>
+        <li><a class="" href="button-groups.html">Button Groups</a></li>
+        <li><a class="" href="dropdown-buttons.html">Dropdown Buttons</a></li>
+        <li><a class="active" href="split-buttons.html">Split Buttons</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Forms</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="forms.html">Forms</a></li>
+        <li><a class="" href="custom-forms.html">Custom Forms</a></li>
+        <li><a class="" href="switch.html">Switch</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Typography</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="type.html">Type</a></li>
+        <li><a class="" href="inline-lists.html">Inline Lists</a></li>
+        <li><a class="" href="labels.html">Labels</a></li>
+        <li><a class="" href="keystrokes.html">Keystrokes</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">CSS Components</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="global.html">Global Styles</a></li>
+        <li><a class="" href="alert-boxes.html">Alert Boxes</a></li>
+        <li><a class="" href="panels.html">Panels</a></li>
+        <li><a class="" href="pricing-tables.html">Pricing Tables</a></li>
+        <li><a class="" href="progress-bars.html">Progress Bars</a></li>
+        <li><a class="" href="tables.html">Tables</a></li>
+        <li><a class="" href="thumbnails.html">Thumbnails</a></li>
+        <li><a class="" href="flex-video.html">Flex Video</a></li>
+        <li class="divider"></li>
+        <li><a target="_blank" style="font-style: italic" class="" href="kitchen-sink.html">Kitchen Sink</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Javascript</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="clearing.html">Clearing</a></li>
+        <li><a class="" href="dropdown.html">Dropdown</a></li>
+        <li><a class="" href="interchange.html">Interchange</a></li>
+        <li><a class="" href="joyride.html">Joyride</a></li>
+        <li><a class="" href="magellan.html">Magellan</a></li>
+        <li><a class="" href="orbit.html">Orbit</a></li>
+        <li><a class="" href="reveal.html">Reveal</a></li>
+        <li><a class="" href="section.html">Section</a></li>
+        <li><a class="" href="tooltips.html">Tooltips</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../faq.html">FAQ</a></p>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../support.html">Support</a></p>
+  </section>
+</div>
+
+<p><a href="http://foundation.zurb.com/download.php" class="button expand" style="margin-bottom: 0;">Download Foundation 4</a></p>
+
+<div class="jobs hide-for-small">
+  <h5>Awesome product jobs:</h5>
+  <div id="zurbJobsWidget"></div>
+  <a id="via" href="http://zurbjobs.com">via&nbsp;<span class="jobs-link">ZURBjobs</span></a>
+</div>
+
+  </div>
+</div>
+
+    <ul id="drop" class="f-dropdown" data-dropdown-content>
+      <li><a href="#">This is a link</a></li>
+      <li><a href="#">This is another</a></li>
+      <li><a href="#">Yet another</a></li>
+    </ul>
+    <ul id="drop1" class="f-dropdown" data-dropdown-content>
+      <li><a href="#">This is a link</a></li>
+      <li><a href="#">This is another</a></li>
+      <li><a href="#">Yet another</a></li>
+    </ul>
+    <ul id="drop2" class="f-dropdown" data-dropdown-content>
+      <li><a href="#">This is a link</a></li>
+      <li><a href="#">This is another</a></li>
+      <li><a href="#">Yet another</a></li>
+    </ul>
+    <ul id="drop3" class="f-dropdown" data-dropdown-content>
+      <li><a href="#">This is a link</a></li>
+      <li><a href="#">This is another</a></li>
+      <li><a href="#">Yet another</a></li>
+    </ul>
+    <ul id="drop4" class="f-dropdown" data-dropdown-content>
+      <li><a href="#">This is a link</a></li>
+      <li><a href="#">This is another</a></li>
+      <li><a href="#">Yet another</a></li>
+    </ul>
+    <ul id="drop5" class="f-dropdown" data-dropdown-content>
+      <li><a href="#">This is a link</a></li>
+      <li><a href="#">This is another</a></li>
+      <li><a href="#">Yet another</a></li>
+    </ul>
+
+
+
+
+    <footer class="row full-width">
+      <div class="large-5 columns">
+        <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://foundation.zurb.com/about.php">Foundation Info and Goodies &rarr;</a></p>
+      </div>
+
+      <div class="large-3 columns">
+        <h6><strong>Using Foundation?</strong></h6>
+        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+      </div>
+
+      <div class="large-4 columns">
+        <h6><strong>Need some help?</strong></h6>
+        <p>For answers or help visit the <a href="http://foundation.zurb.com/docs/support.html">Support page</a>.</p>
+      </div>
+    </footer>
+
+    <div id="copyright">
+      <div class="row full-width">
+        <div class="large-4 columns">
+          <p>Site content &copy; 2013 ZURB, inc.</p>
+        </div>
+        <div class="large-8 columns">
+          <ul class="inline-list right">
+            <li><a href="http://foundation.zurb.com">Home</a></li>
+            <li><a href="http://foundation.zurb.com/download.php">Download</a></li>
+            <li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+            <li><a href="http://foundation.zurb.com/docs/changelog.html">Changelog</a></li>
+            <li><a href="http://foundation.zurb.com/about.php">About</a></li>
+            <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Google Analytics
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      document.write('<script src="http://hiromi:4001/assets/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js"><\/script>');
+    </script>
+    <script src="http://hiromi:4001/assets/docs.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+      
+
+      $.ajax({
+        url: '//zurb.com/jobs/widgets/jobs.json?limit=3',
+        dataType: 'jsonp',
+        success: function(data) {
+          var list = $("<ul></ul>");
+          $.each(data.jobs, function(idx, job) {
+            var item = "<li><a href='"+job.url+"' target='_blank'>" +
+              "<span class='positionTitle'>"+job.title+"</span>" +
+              "<span class='location'><span class='companyName'>"+job.company_name+"</span> in "+job.location+"</span>" +
+              "</a>" +
+              "</li>";
+            list.append(item);
+          });
+            // Customize This
+          $("#zurbJobsWidget").html(list);
+        }
+      });
+
+      // For Kitchen Sink Page
+      $('#start-jr').on('click', function() {
+        $(document).foundation('joyride','start');
+      });
+    </script>
+  </body>
+</html>

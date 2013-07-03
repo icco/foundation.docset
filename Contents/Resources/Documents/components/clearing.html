@@ -1,0 +1,434 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicons/apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicons/apple-touch-icon-114x114-precomposed.png">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicons/apple-touch-icon-72x72-precomposed.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <title>Foundation Docs: Clearing</title>
+    <link rel="stylesheet" href="http://hiromi:4001/assets/normalize.css" />
+    <link rel="stylesheet" href="http://hiromi:4001/assets/docs.css" />
+    <script src="http://hiromi:4001/assets/vendor/custom.modernizr.js"></script>
+  </head>
+  <body class="antialiased">
+
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">Foundation</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="/grid.php">Features</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates.php">Add-ons</a></li>
+          <li class="divider"></li>
+          <li><a href="/case-jacquelinewest.php">Case Studies</a></li>
+          <li class="divider"></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li class="divider"></li>
+          <li><a href="/training.php">Training</a></li>
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="http://foundation.zurb.com/docs" class="button">Getting Started</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 class="docs header"><a href="http://foundation.zurb.com/docs/">Foundation 4 Documentation</a></h1>
+        <h6 class="docs subheader"><a href="http://foundation.zurb.com/old-docs/f3">Want F3 Docs?</a></h6>
+        <hr>
+      </div>
+    </div>
+
+    
+<div class="row">
+  <div class="large-9 push-3 columns">
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Clearing</h2>
+        <h4 class="subheader">Since Orbit isn't intended for variable-height content, we decided it would be a great idea to create a plugin that would help in that regard. Clearing makes it easy to create responsive lightboxes with any size image.</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+
+        <ul class="clearing-thumbs" data-clearing>
+          <li><a class="th" href="../img/demos/demo1.jpg"><img data-caption="Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum." src="../img/demos/demo1-th.jpg"></a></li>
+          <li><a class="th" href="../img/demos/demo2.jpg"><img src="../img/demos/demo2-th.jpg"></a></li>
+          <li><a class="th" href="../img/demos/demo3.jpg"><img data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." src="../img/demos/demo3-th.jpg"></a></li>
+          <li><a class="th" href="../img/demos/demo4.jpg"><img src="../img/demos/demo4-th.jpg"></a></li>
+          <li><a class="th" href="../img/demos/demo5.jpg"><img data-caption="Integer posuere erat a ante venenatis dapibus posuere velit aliquet." src="../img/demos/demo5-th.jpg"></a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+
+        <h3>Build Your Clearing Lightbox</h3>
+        <p>There is only one way to build a Clearing lightbox, using our predefined class and data-attribute structure. We've made it really easy: gather some images, decide on their order, and put them into a <code>&lt;ul class="clearing-thumbs"&gt;</code> of your choice. In order to get Clearing to build itself properly, you'll need to have Javascript properly included. We outline <a href="#js">Clearing JS</a> a bit further down the page.</p>
+
+        <p>Once you get your JS hooked up, you'll need to add <code>data-clearing</code> to your list container. Here's an example of the most basic markup needed:</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;ul</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">clearing-thumbs</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-clearing</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></pre></div>
+</div>
+</div>
+
+        <h5>Styling the List</h5>
+        <p>We're using the <code>.th</code> class from Foundation to style the thumbnails in the Clearing example at the top of the page. You can also use <code>@include thumb;</code> in SCSS to use those same styles.</p></aside>
+
+        <hr>
+
+        <h4>Start From a Featured Image</h4>
+        <p>Sometimes you don't want to show a gallery full of images on your site, but you want to open the gallery from a single image. By including all of your images in a <code>.clearing-feature</code> list and using <code>.clearing-featured-img</code> on the <code>&lt;li&gt;</code> of your choice, you'll be able to hide the rest of the images in the on-page gallery. If you want to show more than once, try using our <code>.hide</code> class to set the ones you don't want to <code>display: none;</code>.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;ul</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">clearing-thumbs clearing-feature</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-clearing</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">clearing-featured-img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></pre></div>
+</div>
+</div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <ul class="clearing-thumbs clearing-feature" data-clearing>
+              <li><a class="th" href="../img/demos/demo1.jpg"><img src="../img/demos/demo1-th.jpg"></a></li>
+              <li class="clearing-featured-img"><a class="th" href="../img/demos/demo2.jpg"><img src="../img/demos/demo2-th.jpg"></a></li>
+              <li><a class="th" href="../img/demos/demo3.jpg"><img src="../img/demos/demo3-th.jpg"></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr>
+
+        <h4>Including Captions</h4>
+        <p>Another common use-case for Lightboxes is to include a caption per image. We've made this quick and easy by using data-attributes to hold the content. You'll just attach this attribute to the image it belongs to and voila!</code> Here's the code example:</p>
+
+        <p><strong>Note:</strong> You can now use HTML inside the data-caption attribute.</p>
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;ul</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">clearing-thumbs</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">data-clearing</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">data-caption</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">caption here...</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">data-caption</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">caption 2 here...</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;img</span> <span class="attribute-name">data-caption</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">caption 3 here...</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">path/to/your/img-th</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></pre></div>
+</div>
+</div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <ul class="clearing-thumbs" data-clearing>
+              <li><a class="th" href="../img/demos/demo1.jpg"><img data-caption="caption here..." src="../img/demos/demo1-th.jpg"></a></li>
+              <li><a class="th" href="../img/demos/demo2.jpg"><img data-caption="caption 2 here..." src="../img/demos/demo2-th.jpg"></a></li>
+              <li><a class="th" href="../img/demos/demo3.jpg"><img data-caption="caption 3 here..." src="../img/demos/demo3-th.jpg"></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr>
+
+        <h3>Available SCSS Variables</h3>
+        <p>We opted not to create mixins for this plugin because it relies on classes in the JS to work. These variables should give you the control you need to change styles as you see fit:</p>
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* We use these to set the background colors for parts of Clearing. */</span>
+<span class="error">$</span><span class="type">clearing-bg</span>: <span class="constant">#111</span>;
+<span class="error">$</span><span class="type">clearing-caption-bg</span>: <span class="error">$</span><span class="type">clearing-bg</span>;
+<span class="error">$</span><span class="type">clearing-carousel-bg</span>: <span class="constant">#111</span>;
+<span class="error">$</span><span class="type">clearing-img-bg</span>: <span class="error">$</span><span class="type">clearing-bg</span>;
+
+<span class="comment">/* We use these to style the close button */</span>
+<span class="error">$</span><span class="type">clearing-close-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">clearing-close-size</span>: <span class="float">40px</span>;
+
+<span class="comment">/* We use these to style the arrows */</span>
+<span class="error">$</span><span class="type">clearing-arrow-size</span>: <span class="float">16px</span>;
+<span class="error">$</span><span class="type">clearing-arrow-color</span>: <span class="error">$</span><span class="type">clearing-close-color</span>;
+
+<span class="comment">/* We use these to style captions */</span>
+<span class="error">$</span><span class="type">clearing-caption-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">clearing-caption-padding</span>: <span class="float">10px</span> <span class="float">30px</span>;
+
+<span class="comment">/* We use these to make the image and carousel height and style */</span>
+<span class="error">$</span><span class="type">clearing-active-img-height</span>: <span class="float">75%</span>;
+<span class="error">$</span><span class="type">clearing-carousel-height</span>: <span class="float">150px</span>;
+<span class="error">$</span><span class="type">clearing-carousel-thumb-width</span>: <span class="float">175px</span>;
+<span class="error">$</span><span class="type">clearing-carousel-thumb-active-border</span>: <span class="float">4px</span> <span class="type">solid</span> <span class="color">rgb(255,255,255)</span>;
+</pre></div>
+</div>
+</div>
+
+        <hr>
+
+        <h3>Using the JavaScript</h3>
+        <p>To make sure Clearing works properly, you'll need to include <code>foundation.clearing.js</code> if you want to add the ability to close an alert. You'll also need to make sure to include <code>zepto.js</code> and <code>foundation.js</code> above the Clearing plugin. Above your closing </body> tag include the following line of code and make sure you have the JS in your directory:</p>
+
+        <p><a href="../javascript.html" title="How to install Foundation JavaScript">Read how to install Foundation JavaScript</a></p>
+
+        <h5>Optional JavaScript Configuration</h5>
+
+        <p>As of Clearing 4.1.2, you can now pass in options to <code>data-options</code> when the clearing is initialized on the page.</p>
+
+<div class='js'><div class="CodeRay">
+  <div class="code"><pre>
+{
+  <span class="comment">// specify the classes or IDs will close clearing when clicked.</span>
+  <span class="key">close_selectors</span> : <span class="string"><span class="delimiter">'</span><span class="content">.clearing-close</span><span class="delimiter">'</span></span>
+}</pre></div>
+</div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="large-3 pull-9 columns">
+    <div class="docs section-container accordion" data-section data-options="one_up: false">
+  <section class="section ">
+    <p class="title"><a href="#">Using Foundation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="../">Get Started</a></li>
+        <li><a href="../javascript.html">Javascript</a></li>
+        <li><a href="../sass.html">Sass</a></li>
+        <li><a href="../rails.html">Rails</a></li>
+        <li><a href="../media-queries.html">Media Queries</a></li>
+        <li><a class="" href="visibility.html">Visibility Classes</a></li>
+        <li><a href="../rtl.html">Right-to-Left Support</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Grid</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="grid.html">Grid</a></li>
+        <li><a class="" href="block-grid.html">Block Grid</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Navigation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="pagination.html">Pagination</a></li>
+        <li><a class="" href="side-nav.html">Side Nav</a></li>
+        <li><a class="" href="sub-nav.html">Sub Nav</a></li>
+        <li><a class="" href="top-bar.html">Top Bar</a></li>
+        <li><a class="" href="breadcrumbs.html">Breadcrumbs</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Buttons</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="buttons.html">Buttons</a></li>
+        <li><a class="" href="button-groups.html">Button Groups</a></li>
+        <li><a class="" href="dropdown-buttons.html">Dropdown Buttons</a></li>
+        <li><a class="" href="split-buttons.html">Split Buttons</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Forms</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="forms.html">Forms</a></li>
+        <li><a class="" href="custom-forms.html">Custom Forms</a></li>
+        <li><a class="" href="switch.html">Switch</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Typography</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="type.html">Type</a></li>
+        <li><a class="" href="inline-lists.html">Inline Lists</a></li>
+        <li><a class="" href="labels.html">Labels</a></li>
+        <li><a class="" href="keystrokes.html">Keystrokes</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">CSS Components</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="global.html">Global Styles</a></li>
+        <li><a class="" href="alert-boxes.html">Alert Boxes</a></li>
+        <li><a class="" href="panels.html">Panels</a></li>
+        <li><a class="" href="pricing-tables.html">Pricing Tables</a></li>
+        <li><a class="" href="progress-bars.html">Progress Bars</a></li>
+        <li><a class="" href="tables.html">Tables</a></li>
+        <li><a class="" href="thumbnails.html">Thumbnails</a></li>
+        <li><a class="" href="flex-video.html">Flex Video</a></li>
+        <li class="divider"></li>
+        <li><a target="_blank" style="font-style: italic" class="" href="kitchen-sink.html">Kitchen Sink</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section active">
+    <p class="title"><a href="#">Javascript</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="active" href="clearing.html">Clearing</a></li>
+        <li><a class="" href="dropdown.html">Dropdown</a></li>
+        <li><a class="" href="interchange.html">Interchange</a></li>
+        <li><a class="" href="joyride.html">Joyride</a></li>
+        <li><a class="" href="magellan.html">Magellan</a></li>
+        <li><a class="" href="orbit.html">Orbit</a></li>
+        <li><a class="" href="reveal.html">Reveal</a></li>
+        <li><a class="" href="section.html">Section</a></li>
+        <li><a class="" href="tooltips.html">Tooltips</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../faq.html">FAQ</a></p>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../support.html">Support</a></p>
+  </section>
+</div>
+
+<p><a href="http://foundation.zurb.com/download.php" class="button expand" style="margin-bottom: 0;">Download Foundation 4</a></p>
+
+<div class="jobs hide-for-small">
+  <h5>Awesome product jobs:</h5>
+  <div id="zurbJobsWidget"></div>
+  <a id="via" href="http://zurbjobs.com">via&nbsp;<span class="jobs-link">ZURBjobs</span></a>
+</div>
+
+  </div>
+
+</div>
+
+    <footer class="row full-width">
+      <div class="large-5 columns">
+        <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://foundation.zurb.com/about.php">Foundation Info and Goodies &rarr;</a></p>
+      </div>
+
+      <div class="large-3 columns">
+        <h6><strong>Using Foundation?</strong></h6>
+        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+      </div>
+
+      <div class="large-4 columns">
+        <h6><strong>Need some help?</strong></h6>
+        <p>For answers or help visit the <a href="http://foundation.zurb.com/docs/support.html">Support page</a>.</p>
+      </div>
+    </footer>
+
+    <div id="copyright">
+      <div class="row full-width">
+        <div class="large-4 columns">
+          <p>Site content &copy; 2013 ZURB, inc.</p>
+        </div>
+        <div class="large-8 columns">
+          <ul class="inline-list right">
+            <li><a href="http://foundation.zurb.com">Home</a></li>
+            <li><a href="http://foundation.zurb.com/download.php">Download</a></li>
+            <li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+            <li><a href="http://foundation.zurb.com/docs/changelog.html">Changelog</a></li>
+            <li><a href="http://foundation.zurb.com/about.php">About</a></li>
+            <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Google Analytics
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      document.write('<script src="http://hiromi:4001/assets/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js"><\/script>');
+    </script>
+    <script src="http://hiromi:4001/assets/docs.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+      
+
+      $.ajax({
+        url: '//zurb.com/jobs/widgets/jobs.json?limit=3',
+        dataType: 'jsonp',
+        success: function(data) {
+          var list = $("<ul></ul>");
+          $.each(data.jobs, function(idx, job) {
+            var item = "<li><a href='"+job.url+"' target='_blank'>" +
+              "<span class='positionTitle'>"+job.title+"</span>" +
+              "<span class='location'><span class='companyName'>"+job.company_name+"</span> in "+job.location+"</span>" +
+              "</a>" +
+              "</li>";
+            list.append(item);
+          });
+            // Customize This
+          $("#zurbJobsWidget").html(list);
+        }
+      });
+
+      // For Kitchen Sink Page
+      $('#start-jr').on('click', function() {
+        $(document).foundation('joyride','start');
+      });
+    </script>
+  </body>
+</html>

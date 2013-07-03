@@ -1,0 +1,780 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicons/apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicons/apple-touch-icon-114x114-precomposed.png">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicons/apple-touch-icon-72x72-precomposed.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <title>Foundation Docs: Forms</title>
+    <link rel="stylesheet" href="http://hiromi:4001/assets/normalize.css" />
+    <link rel="stylesheet" href="http://hiromi:4001/assets/docs.css" />
+    <script src="http://hiromi:4001/assets/vendor/custom.modernizr.js"></script>
+  </head>
+  <body class="antialiased">
+
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">Foundation</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><a href="/grid.php">Features</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates.php">Add-ons</a></li>
+          <li class="divider"></li>
+          <li><a href="/case-jacquelinewest.php">Case Studies</a></li>
+          <li class="divider"></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li class="divider"></li>
+          <li><a href="/training.php">Training</a></li>
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="http://foundation.zurb.com/docs" class="button">Getting Started</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 class="docs header"><a href="http://foundation.zurb.com/docs/">Foundation 4 Documentation</a></h1>
+        <h6 class="docs subheader"><a href="http://foundation.zurb.com/old-docs/f3">Want F3 Docs?</a></h6>
+        <hr>
+      </div>
+    </div>
+
+    
+<div class="row">
+  <div class="large-9 push-3 columns">
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Forms</h2>
+        <h4 class="subheader">With Foundation, we set out to create an easy to handle, powerful and versatile form layout system. A combination of form styles and the Foundation grid means you can do basically anything.</h4>
+
+        <form class="custom">
+          <fieldset>
+            <legend>Fieldset</legend>
+
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="large-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns">
+              </div>
+              <div class="large-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns">
+              </div>
+              <div class="large-4 columns">
+                <div class="row collapse">
+                  <label>Input Label</label>
+                  <div class="small-9 columns">
+                    <input type="text" placeholder="small-9.columns">
+                  </div>
+                  <div class="small-3 columns">
+                    <span class="postfix">.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Textarea Label</label>
+                <textarea placeholder="small-12.columns"></textarea>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+
+        <h3>Building Forms with HTML</h3>
+        <p>OK, so you have a client that needs a form with an unhuman layout. "You can't back down because of some legal reason," he says. What are you to do? Foundation has you covered with versatile forms that looks great out of the box and are easily customizable as you need.</p>
+
+        <p>Form elements in Foundation are styled based on their type attribute rather than a class. Inputs in Foundation have another major advantage &mdash; they are full width by default. That means that inputs will run as wide as the column that contains them. However, you have two options which make these forms extremely versatile:</p>
+
+        <ul class="disc">
+          <li>You can size inputs using column sizes, like <code>.large-6</code>, <code>.small-6</code>.</li>
+          <li>You can create row elements inside your form and use columns for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.</li>
+        </ul>
+
+        <p>This ultimately adds a bit of code to your forms, but it's worth the trade off! Here's what the example above looks like in HTML:</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;legend&gt;</span>Fieldset<span class="tag">&lt;/legend&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-12 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-12.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+          <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;/div&gt;</span>
+          <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">postfix</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>.com<span class="tag">&lt;/span&gt;</span>
+          <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-12 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Textarea Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;textarea</span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-12.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+  <span class="tag">&lt;/fieldset&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <hr>
+
+        <h4>Inline Labels</h4>
+        <p>Sometimes you want a form with labels to the left of your inputs. Piece of cake. You can put the label inside a different column to the left of the input. Then add a class of <code>.right</code> to the label to have it align to the right.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Inline Text Input</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row">
+            <div class="small-8">
+              <div class="row">
+                <div class="small-3 columns">
+                  <label for="right-label" class="right">Label</label>
+                </div>
+                <div class="small-9 columns">
+                  <input type="text" id="right-label" placeholder="Inline Text Input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <p>Adding a class of <code>.inline</code> will have it vertically center against an input. You can use one or both of these classes to accomplish the look you want.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right inline</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Inline Text Input</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row">
+            <div class="small-8">
+              <div class="row">
+                <div class="small-3 columns">
+                  <label for="right-label" class="right inline">Label</label>
+                </div>
+                <div class="small-9 columns">
+                  <input type="text" id="right-label" placeholder="Inline Text Input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <hr>
+
+        <h4>Defining a Fieldset</h4>
+        <p>We don't see them too much, but one of the useful form elements included with Foundation is <code>&lt;fieldset&gt;</code>. This is used as a wrapper right inside the form element. Right after you define a fieldset, you can include a legend title by using <code>&lt;legend&gt;</code>. Here's some HTML to help make copy paste.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;legend&gt;</span>Fieldset Legend<span class="tag">&lt;/legend&gt;</span>
+
+    <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Inputs and other form elements go inside...</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;/fieldset&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <form>
+          <fieldset>
+            <legend>Fieldset Legend</legend>
+
+            <label>Input Label</label>
+            <input type="text" placeholder="Inputs and other form elements go inside...">
+          </fieldset>
+        </form>
+
+        <hr>
+
+        <h4>Pre/Postfix Labels &amp; Actions</h4>
+        <p>Foundation forms support actions tied to buttons, and prefix / postfix labels, through a versatile approach using special grid properties. Essentially you can use <code>&lt;div class="row collapse"&gt;</code> to create label / action / input combinations. You use the Foundation columns to define the size of the pre/postfix <code>&lt;span class="postfix"&gt;</code> or <code>&lt;span class="prefix"&gt;</code>. Here are a few examples:</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 large-2 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">prefix</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>http://<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 large-10 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter your URL...</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-10 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Hex Value</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-2 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button prefix</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Action<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Value</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">postfix radius</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Label<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row collapse">
+            <div class="small-3 large-2 columns">
+              <span class="prefix">http://</span>
+            </div>
+            <div class="small-9 large-10 columns">
+              <input type="text" placeholder="Enter your URL...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-6 columns">
+              <div class="row collapse">
+                <div class="small-10 columns">
+                  <input type="text" placeholder="Hex Value">
+                </div>
+                <div class="small-2 columns">
+                  <a href="#" class="button prefix">Action</a>
+                </div>
+              </div>
+            </div>
+            <div class="large-6 columns">
+              <div class="row collapse">
+                <div class="small-9 columns">
+                  <input type="text" placeholder="Value">
+                </div>
+                <div class="small-3 columns">
+                  <span class="postfix radius">Label</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <p>You'll notice that on the last postfix element, we've included the class of <code>radius</code>. This adds the border radius on the appropriate edge depending on whether it's a prefix or a postfix element. You can even include buttons with these styles, just apply the <code>.button</code> as well as the pre/postfix class.</p>
+
+        <hr>
+
+        <h4>Error States</h4>
+        <p>Foundation includes error states for labels, inputs and messaging that you can have your app generate programatically. You can attach a class of <code>.error</code> either to the individual elements (label, input, small) or to a column/div.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;label</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Error<span class="tag">&lt;/label&gt;</span>
+      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;small</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Invalid entry<span class="tag">&lt;/small&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;label&gt;</span>Another Error<span class="tag">&lt;/label&gt;</span>
+      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;small&gt;</span>Invalid entry<span class="tag">&lt;/small&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;textarea</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Message...</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+  <span class="tag">&lt;small</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Invalid entry<span class="tag">&lt;/small&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row">
+            <div class="large-6 columns">
+              <label class="error">Error</label>
+              <input type="text" class="error" />
+              <small class="error">Invalid entry</small>
+            </div>
+
+            <div class="large-6 columns error">
+              <label>Another Error</label>
+              <input type="text" />
+              <small>Invalid entry</small>
+            </div>
+          </div>
+
+          <textarea class="error" placeholder="Message..."></textarea>
+          <small class="error">Invalid entry</small>
+        </form>
+
+        <hr>
+
+        <h3>Build with Mixins</h3>
+       <p>A lot of elements in Foundation can be created using SCSS mixins so that you can include your own classes and just enough style as needed for the job at hand. To use these mixins, you'll need to have the extension installed or grab <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/_variables.scss">_variables.scss</a>, <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_forms.scss">_forms.scss</a>, <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_global.scss">_global.scss</a> and <a href="https://github.com/zurb/foundation/blob/master/scss/foundation/components/_buttons.scss">_buttons.scss</a> from Github and throw them into a Foundation folder in your project directory. From there, you can import the files at the top of your own SCSS stylesheet, like so:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="directive">@import</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/variables</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/global</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/buttons</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">foundation/components/forms</span><span class="delimiter">&quot;</span></span>;</pre></div>
+</div>
+</div>
+
+
+        <p>We include most of the form styles by default, but the ones that are attached to HTML classes can be accessed via the mixins below. The error states have mixins, but we suggest using the classes since they are usually only visible temporarily.</p>
+
+        <h5>The Pre/Postfix Mixin</h5>
+        <p>With the form label mixin, you can control which classes make your labels line up how you want them to next to their form elements. You'll use these in conjunction with the grid mixin.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">your-prefix-class</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Label<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">your-input-class</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Value</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <p>Since you need to wrap columns in a container anyway, we've used a <code>.row.collapse</code> rather than creating our own class to hold those mixins. Feel free to attach those styles to your own class or ID though.</p>
+
+        <h6>The base mixin:</h6>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.your-prefix-class</span> {
+  <span class="directive">@include</span> <span class="key">prefix-postfix-base</span>;
+  <span class="directive">@include</span> <span class="error">g</span><span class="error">r</span><span class="error">i</span><span class="error">d</span><span class="error">-</span><span class="error">c</span><span class="error">o</span><span class="error">l</span><span class="error">u</span><span class="error">m</span><span class="error">n</span>(<span class="error">$</span><span class="key">columns</span>:<span class="float">3</span>,<span class="error">$</span><span class="value">float</span>:<span class="value">left</span>);
+}
+
+<span class="type">input</span>[<span class="attribute-name">type=&quot;text&quot;</span>]<span class="class">.your-input-class</span> {
+  <span class="directive">@include</span> <span class="error">g</span><span class="error">r</span><span class="error">i</span><span class="error">d</span><span class="error">-</span><span class="error">c</span><span class="error">o</span><span class="error">l</span><span class="error">u</span><span class="error">m</span><span class="error">n</span>(<span class="error">$</span><span class="key">columns</span>:<span class="float">9</span>);
+}</pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row collapse">
+            <span class="attached-label">Label</span>
+            <input type="text" class="attached-input" placeholder="Value">
+          </div>
+        </form>
+
+        <h6>The Prefix &amp; Postfix Style Mixins</h6>
+        <p>You can control the style you add to your prefix or postfix elements using this mixin, it looks like this:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="class">.your-prefix-class</span> {
+  <span class="directive">@include</span> <span class="key">prefix-postfix-base</span>;
+  <span class="directive">@include</span> <span class="key">prefix</span>;
+  <span class="directive">@include</span> <span class="error">g</span><span class="error">r</span><span class="error">i</span><span class="error">d</span><span class="error">-</span><span class="error">c</span><span class="error">o</span><span class="error">l</span><span class="error">u</span><span class="error">m</span><span class="error">n</span>(<span class="error">$</span><span class="key">columns</span>:<span class="float">3</span>,<span class="error">$</span><span class="value">float</span>:<span class="value">left</span>);
+}
+
+<span class="type">input</span>[<span class="attribute-name">type=&quot;text&quot;</span>]<span class="class">.your-input-class</span> {
+  <span class="directive">@include</span> <span class="error">g</span><span class="error">r</span><span class="error">i</span><span class="error">d</span><span class="error">-</span><span class="error">c</span><span class="error">o</span><span class="error">l</span><span class="error">u</span><span class="error">m</span><span class="error">n</span>(<span class="error">$</span><span class="key">columns</span>:<span class="float">9</span>);
+}</pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row collapse">
+            <span class="attached-label style">Label</span>
+            <input type="text" class="attached-input" placeholder="Value">
+          </div>
+        </form>
+
+        <p>There are two options you can set with the prefix and postfix mixins, these are:</p>
+
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="directive">@include</span> <span class="error">p</span><span class="error">r</span><span class="error">e</span><span class="error">f</span><span class="error">i</span><span class="error">x</span>(<span class="error">$</span><span class="type">bg</span>, <span class="error">$</span><span class="type">is-button</span>);
+
+<span class="comment">/* Control the background color, which also effect the border and font color */</span>
+<span class="error">$</span><span class="type">bg</span>: <span class="error">$</span><span class="type">input-prefix-bg</span>
+
+<span class="comment">/* If you prefix or postfix element is a button, make sure to set this to true */</span>
+<span class="error">$</span><span class="type">is-button</span>: <span class="type">false</span>
+</pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row collapse">
+            <span class="attached-label style custom">Label</span>
+            <input type="text" class="attached-input" placeholder="Value">
+          </div>
+        </form>
+
+        <h5>Default SCSS Variables</h5>
+<div class='css'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="comment">/* We use this to set the base for lots of form spacing and positioning styles */</span>
+<span class="error">$</span><span class="type">form-spacing</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">16px</span>);
+
+<span class="comment">/* We use these to style the labels in different ways */</span>
+<span class="error">$</span><span class="type">form-label-pointer</span>: <span class="type">pointer</span>;
+<span class="error">$</span><span class="type">form-label-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">form-label-font-weight</span>: <span class="float">500</span>;
+<span class="error">$</span><span class="type">form-label-font-color</span>: <span class="error">l</span><span class="error">i</span><span class="error">g</span><span class="error">h</span><span class="error">t</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#000</span>, <span class="float">30%</span>);
+<span class="error">$</span><span class="type">form-label-bottom-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+<span class="error">$</span><span class="type">input-font-color</span>: <span class="color">rgba(0,0,0,0.75)</span>;
+<span class="error">$</span><span class="type">input-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">14px</span>);
+<span class="error">$</span><span class="type">input-bg-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">input-focus-bg-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">2%</span>);
+<span class="error">$</span><span class="type">input-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">input-focus-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">40%</span>);
+<span class="error">$</span><span class="type">input-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">input-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">input-disabled-bg</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">input-box-shadow</span>: <span class="type">inset</span> <span class="float">0</span> <span class="float">1px</span> <span class="float">2px</span> <span class="color">rgba(0,0,0,0.1)</span>;
+<span class="error">$</span><span class="type">input-include-glowing-effect</span>: <span class="type">true</span>;
+
+<span class="comment">/* We use these to style the fieldset border and spacing. */</span>
+<span class="error">$</span><span class="type">fieldset-border-style</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">fieldset-border-width</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">fieldset-border-color</span>: <span class="constant">#ddd</span>;
+<span class="error">$</span><span class="type">fieldset-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">20px</span>);
+<span class="error">$</span><span class="type">fieldset-margin</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">18px</span>) <span class="float">0</span>;
+
+<span class="comment">/* We use these to style the legends when you use them */</span>
+<span class="error">$</span><span class="type">legend-bg</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">legend-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">legend-padding</span>: <span class="float">0</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">3px</span>);
+
+<span class="comment">/* We use these to style the prefix and postfix input elements */</span>
+<span class="error">$</span><span class="type">input-prefix-bg</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">5%</span>);
+<span class="error">$</span><span class="type">input-prefix-border-color</span>: <span class="error">d</span><span class="error">a</span><span class="error">r</span><span class="error">k</span><span class="error">e</span><span class="error">n</span>(<span class="constant">#fff</span>, <span class="float">20%</span>);
+<span class="error">$</span><span class="type">input-prefix-border-size</span>: <span class="float">1px</span>;
+<span class="error">$</span><span class="type">input-prefix-border-type</span>: <span class="type">solid</span>;
+<span class="error">$</span><span class="type">input-prefix-overflow</span>: <span class="type">hidden</span>;
+<span class="error">$</span><span class="type">input-prefix-font-color</span>: <span class="constant">#333</span>;
+<span class="error">$</span><span class="type">input-prefix-font-color-alt</span>: <span class="constant">#fff</span>;
+
+<span class="comment">/* We use these to style the error states for inputs and labels */</span>
+<span class="error">$</span><span class="type">input-error-message-padding</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">6px</span>) <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">4px</span>);
+<span class="error">$</span><span class="type">input-error-message-top</span>: <span class="error">-</span>(<span class="error">$</span><span class="type">form-spacing</span>) <span class="error">-</span> <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">5px</span>);
+<span class="error">$</span><span class="type">input-error-message-font-size</span>: <span class="error">e</span><span class="error">m</span><span class="error">C</span><span class="error">a</span><span class="error">l</span><span class="error">c</span>(<span class="float">12px</span>);
+<span class="error">$</span><span class="type">input-error-message-font-weight</span>: <span class="type">bold</span>;
+<span class="error">$</span><span class="type">input-error-message-font-color</span>: <span class="constant">#fff</span>;
+<span class="error">$</span><span class="type">input-error-message-font-color-alt</span>: <span class="constant">#333</span>;
+
++<span class="comment">/* We use this to style the glowing effect of inputs when focused */</span>
++<span class="error">$</span><span class="type">glowing-effect-fade-time</span>: <span class="float">0.45s</span> <span class="error">!</span><span class="type">default</span>;
++<span class="error">$</span><span class="type">glowing-effect-color</span>: <span class="error">$</span><span class="type">input-focus-border-color</span> <span class="error">!</span><span class="type">default</span>;
+
+</pre></div>
+</div>
+</div>
+
+        <p><strong>Note:</strong> <code>emCalc();</code> is a function we wrote to convert <code>px</code> to <code>em</code>. It is included in <strong>_variables.scss</strong>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="large-3 pull-9 columns">
+    <div class="docs section-container accordion" data-section data-options="one_up: false">
+  <section class="section ">
+    <p class="title"><a href="#">Using Foundation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a href="../">Get Started</a></li>
+        <li><a href="../javascript.html">Javascript</a></li>
+        <li><a href="../sass.html">Sass</a></li>
+        <li><a href="../rails.html">Rails</a></li>
+        <li><a href="../media-queries.html">Media Queries</a></li>
+        <li><a class="" href="visibility.html">Visibility Classes</a></li>
+        <li><a href="../rtl.html">Right-to-Left Support</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Grid</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="grid.html">Grid</a></li>
+        <li><a class="" href="block-grid.html">Block Grid</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Navigation</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="pagination.html">Pagination</a></li>
+        <li><a class="" href="side-nav.html">Side Nav</a></li>
+        <li><a class="" href="sub-nav.html">Sub Nav</a></li>
+        <li><a class="" href="top-bar.html">Top Bar</a></li>
+        <li><a class="" href="breadcrumbs.html">Breadcrumbs</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Buttons</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="buttons.html">Buttons</a></li>
+        <li><a class="" href="button-groups.html">Button Groups</a></li>
+        <li><a class="" href="dropdown-buttons.html">Dropdown Buttons</a></li>
+        <li><a class="" href="split-buttons.html">Split Buttons</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section active">
+    <p class="title"><a href="#">Forms</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="active" href="forms.html">Forms</a></li>
+        <li><a class="" href="custom-forms.html">Custom Forms</a></li>
+        <li><a class="" href="switch.html">Switch</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Typography</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="type.html">Type</a></li>
+        <li><a class="" href="inline-lists.html">Inline Lists</a></li>
+        <li><a class="" href="labels.html">Labels</a></li>
+        <li><a class="" href="keystrokes.html">Keystrokes</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">CSS Components</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="global.html">Global Styles</a></li>
+        <li><a class="" href="alert-boxes.html">Alert Boxes</a></li>
+        <li><a class="" href="panels.html">Panels</a></li>
+        <li><a class="" href="pricing-tables.html">Pricing Tables</a></li>
+        <li><a class="" href="progress-bars.html">Progress Bars</a></li>
+        <li><a class="" href="tables.html">Tables</a></li>
+        <li><a class="" href="thumbnails.html">Thumbnails</a></li>
+        <li><a class="" href="flex-video.html">Flex Video</a></li>
+        <li class="divider"></li>
+        <li><a target="_blank" style="font-style: italic" class="" href="kitchen-sink.html">Kitchen Sink</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="#">Javascript</a></p>
+    <div class="content">
+      <ul class="side-nav">
+        <li><a class="" href="clearing.html">Clearing</a></li>
+        <li><a class="" href="dropdown.html">Dropdown</a></li>
+        <li><a class="" href="interchange.html">Interchange</a></li>
+        <li><a class="" href="joyride.html">Joyride</a></li>
+        <li><a class="" href="magellan.html">Magellan</a></li>
+        <li><a class="" href="orbit.html">Orbit</a></li>
+        <li><a class="" href="reveal.html">Reveal</a></li>
+        <li><a class="" href="section.html">Section</a></li>
+        <li><a class="" href="tooltips.html">Tooltips</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../faq.html">FAQ</a></p>
+  </section>
+  <section class="section ">
+    <p class="title"><a href="../support.html">Support</a></p>
+  </section>
+</div>
+
+<p><a href="http://foundation.zurb.com/download.php" class="button expand" style="margin-bottom: 0;">Download Foundation 4</a></p>
+
+<div class="jobs hide-for-small">
+  <h5>Awesome product jobs:</h5>
+  <div id="zurbJobsWidget"></div>
+  <a id="via" href="http://zurbjobs.com">via&nbsp;<span class="jobs-link">ZURBjobs</span></a>
+</div>
+
+  </div>
+</div>
+
+
+    <footer class="row full-width">
+      <div class="large-5 columns">
+        <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://foundation.zurb.com/about.php">Foundation Info and Goodies &rarr;</a></p>
+      </div>
+
+      <div class="large-3 columns">
+        <h6><strong>Using Foundation?</strong></h6>
+        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+      </div>
+
+      <div class="large-4 columns">
+        <h6><strong>Need some help?</strong></h6>
+        <p>For answers or help visit the <a href="http://foundation.zurb.com/docs/support.html">Support page</a>.</p>
+      </div>
+    </footer>
+
+    <div id="copyright">
+      <div class="row full-width">
+        <div class="large-4 columns">
+          <p>Site content &copy; 2013 ZURB, inc.</p>
+        </div>
+        <div class="large-8 columns">
+          <ul class="inline-list right">
+            <li><a href="http://foundation.zurb.com">Home</a></li>
+            <li><a href="http://foundation.zurb.com/download.php">Download</a></li>
+            <li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+            <li><a href="http://foundation.zurb.com/docs/changelog.html">Changelog</a></li>
+            <li><a href="http://foundation.zurb.com/about.php">About</a></li>
+            <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Google Analytics
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      document.write('<script src="http://hiromi:4001/assets/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js"><\/script>');
+    </script>
+    <script src="http://hiromi:4001/assets/docs.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+      
+
+      $.ajax({
+        url: '//zurb.com/jobs/widgets/jobs.json?limit=3',
+        dataType: 'jsonp',
+        success: function(data) {
+          var list = $("<ul></ul>");
+          $.each(data.jobs, function(idx, job) {
+            var item = "<li><a href='"+job.url+"' target='_blank'>" +
+              "<span class='positionTitle'>"+job.title+"</span>" +
+              "<span class='location'><span class='companyName'>"+job.company_name+"</span> in "+job.location+"</span>" +
+              "</a>" +
+              "</li>";
+            list.append(item);
+          });
+            // Customize This
+          $("#zurbJobsWidget").html(list);
+        }
+      });
+
+      // For Kitchen Sink Page
+      $('#start-jr').on('click', function() {
+        $(document).foundation('joyride','start');
+      });
+    </script>
+  </body>
+</html>
