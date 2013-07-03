@@ -17,5 +17,5 @@ Dir.glob("Contents/Resources/Documents/components/*html").each do |file|
   doc = Nokogiri::HTML(File.read(file))
   file_name = File.join("components", File.basename(file))
   header = get_header doc
-  puts "INSERT INTO searchIndex VALUES (NULL, '#{header}', 'framework', '#{file_name}');"
+  puts "INSERT INTO searchIndex VALUES (NULL, '#{header}', 'Guide', '#{file_name}');"
 end
