@@ -24,6 +24,7 @@ class FoundationAssets
         pth = "#{assets_path}/#{bundle}"
         File.delete(pth) if File.exists?(pth)
         code = @env[bundle].to_s
+        p bundle, pth, @env[bundle]
         File.open(pth, "w") {|f| f.puts code}
       end
     end
