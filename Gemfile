@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'redcarpet'
-gem 'sprockets'
+gem 'sprockets', '>= 2.12.5'
 gem 'foreman'
 gem 'stasis'
 gem 'sass', :require => false
